@@ -1,11 +1,20 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import BasicData from '../data/basic_data.json';
+import Layout from "../layouts/Layout.astro";
+import SearchFilters from '../components/dex/SearchFilters.astro';
+import PokemonListCard from '../components/dex/PokemonListCard.astro'; 
+import CheckDataConsistency from '../components/utils/CheckDataConsistency.astro';
 ---
-
 <Layout>
-	<Welcome />
+    <CheckDataConsistency />
+    <div class="p-[25px]">
+        <SearchFilters/>
+        <div id="pokemonList" class="flex flex-wrap justify-center gap-[20px]">
+            {BasicData.map(pkmn => {
+                return (
+                    <PokemonListCard pkmn={pkmn} />
+                )
+            } )}
+        </div>  
+    </div>
 </Layout>

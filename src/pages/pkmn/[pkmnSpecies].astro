@@ -1,0 +1,69 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import BasicData from "../../data/basic_data.json";
+
+import SpeciesHeader from "../../components/dex/species/SpeciesHeader.astro";
+import SpeciesImage from "../../components/dex/species/SpeciesImage.astro";
+import StatTable from "../../components/dex/species/StatTable.astro";
+import EvolutionLine from "../../components/dex/species/EvolutionLine.astro";
+import AbilityList from "../../components/dex/species/AbilityList.astro";
+import OtherInfo from "../../components/dex/species/OtherInfo.astro";
+import SkillList from "../../components/dex/species/SkillList.astro";
+import CapabilitiesList from "../../components/dex/species/CapabilitiesList.astro";
+import LvMoveList from "../../components/dex/species/LvMoveList.astro";
+import OtherMoveList from "../../components/dex/species/OtherMoveList.astro";
+
+// Find the specific Pokémon data based on the dynamic parameter
+const { pkmnSpecies } = Astro.params;
+const pkmn = BasicData.find(p => p["Species Name"] === pkmnSpecies);
+if (!pkmn) {
+  // Handle the case where the Pokémon is not found
+  return Response.redirect('/404', 302);
+}
+
+export function getStaticPaths() {
+    let ret: { params: { pkmnSpecies: string } }[] = [];
+    for(let pkmn of BasicData){
+        let static_param = {
+            params: {
+                pkmnSpecies: pkmn["Species Name"]
+            }
+        }
+        ret.push(static_param)
+    }    
+    return ret;
+}
+---
+<Layout>    
+    <div class="m-[20px] flex flex-wrap gap-2">
+        <div id="header" class="w-full flex flex-wrap gap-2">
+            <div class="card bg-base-200 text-neutral-content border-base-300 rounded-box border">
+                <div class="card-body p-[15px] grid grid-col-4">
+                    <a href="/"><button class="btn btn-outline border-2 border-pkb-red hover:bg-pkb-red">Back</button></a>     
+                </div>
+            </div>
+            <SpeciesHeader pkmn={ pkmn }/>
+        </div>
+        <div class="flex gap-2 flex-wrap">    
+            <div class="flex flex-col gap-2 w-full md:w-[350px]">
+                <SpeciesImage pkmn={ pkmn } />      
+                <StatTable pkmn={pkmn} /> 
+                <EvolutionLine pkmn={pkmn} />
+            </div>   
+            <div class="flex flex-col gap-2 w-full md:w-auto">
+                <AbilityList pkmn={pkmn} />
+                <OtherInfo pkmn={pkmn} />
+            </div>
+            <div class="flex flex-col gap-2 w-full md:w-auto">     
+                <SkillList pkmn={pkmn} />       
+                <CapabilitiesList pkmn={pkmn} />
+            </div>
+            <div class="flex flex-col gap-2 w-full md:w-auto">
+                <LvMoveList pkmn={pkmn} />
+            </div>
+            <div class="flex flex-col gap-2 w-full md:w-auto">
+                <OtherMoveList pkmn={pkmn} />
+            </div>
+        </div>
+    </div>
+</Layout>

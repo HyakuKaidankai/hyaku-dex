@@ -1,0 +1,132 @@
+---
+import TypeData from "../../data/type_data.json";
+import { Image } from "astro:assets";
+---
+<div id="filterOptions" class="flex mb-[20px] gap-[10px] flex-wrap">
+    <fieldset id="searchFieldset" class="flex-1 fieldset bg-base-200 border-base-300 rounded-box border p-4">
+        <legend class="fieldset-legend">Filter by name</legend>
+        <input 
+            id="nameSearchInput" 
+            type="text" 
+            placeholder="Wooper" 
+            class="w-full input transition-all duration-300 ease-in-out
+            hover:outline-0 hover:border-pkb-red
+            focus:outline-0 focus:border-pkb-red" 
+        />
+    </fieldset>
+    <fieldset class="flex-1 fieldset bg-base-200 border-base-300 rounded-box border p-4">
+        <legend class="fieldset-legend">Filter by type</legend>
+        <div id="typeFilters" class="flex flex-wrap gap-2">
+            <select class="select flex-1 transition-all duration-300 ease-in-out 
+            hover:outline-0 hover:border-pkb-red
+            focus:outline-0 focus:border-pkb-red">
+                <option selected>-</option>
+                {TypeData.filter(type => type.name !== 'stellar').map(type=>( 
+                    <option value={type.name}>{type.name}</option>
+                ))}
+            </select>
+            <select class="select flex-1 transition-all duration-200 ease-in-out 
+            hover:outline-0 hover:border-pkb-red
+            focus:outline-0 focus:border-pkb-red" disabled>
+                <option selected>-</option>
+                {TypeData.filter(type => type.name !== 'stellar').map(type=>( 
+                    <option value={type.name}>{type.name}</option>
+                ))}
+            </select>
+        </div>
+    </fieldset>
+</div>
+<script>
+    // References needed by functions
+    const pokemonList = document.getElementById("pokemonList") as HTMLElement;
+    const nameSearchInput = document.getElementById('nameSearchInput') as HTMLInputElement;
+    const typeSelects = document.querySelectorAll('#typeFilters select');
+
+    // Filter by name and type function
+    function filterPokemon() {
+        const query = nameSearchInput.value.toLowerCase();
+        const selectedType1 = (typeSelects[0] as HTMLSelectElement).value.toLowerCase();
+        const selectedType2 = (typeSelects[1] as HTMLSelectElement).value.toLowerCase();
+
+        const pokemonItems = pokemonList.getElementsByClassName('pkmn-container');
+
+        for (const item of pokemonItems) {
+            const name = item.getAttribute('data-name')?.toLowerCase();
+            const altname = item.getAttribute('data-alt-name')?.toLowerCase();
+            const type1 = item.getAttribute('data-t1')?.toLowerCase();
+            const type2 = item.getAttribute('data-t2')?.toLowerCase();
+
+            let matchesName = true;
+            let matchesType1 = true;
+            let matchesType2 = true;
+
+            if (query) {
+                matchesName = (name && name.includes(query)) || (altname && altname.includes(query));
+            }
+
+            if (selectedType1 !== '-') {
+                matchesType1 = type1 === selectedType1 || type2 === selectedType1;
+            }
+
+            if (selectedType2 !== '-') {
+                matchesType2 = type1 === selectedType2 || type2 === selectedType2;
+            }
+
+            if (matchesName && matchesType1 && matchesType2) {
+                (item as HTMLElement).style.display = 'inherit';
+            } else {
+                (item as HTMLElement).style.display = 'none';
+            }
+        }
+    }
+
+    // Debounce function - Smoothes a bit the repopulation when filter is removed
+    function debounce(func: any, delay: any) {
+        let debounceTimer: number | undefined;
+        return function(this: any) {
+            const context = this;
+            const args = arguments;
+            clearTimeout(debounceTimer);
+            debounceTimer = setTimeout(() => func.apply(context, args), delay);
+        }
+    }
+
+    nameSearchInput && nameSearchInput.addEventListener('input', debounce(filterPokemon, 300));
+
+    function updateSelectOptions(selectedOption: any, currentSelect: any) {
+        typeSelects.forEach(select => {
+            if (select !== currentSelect) {
+                const options = select.querySelectorAll('option');
+                options.forEach(option => {
+                    if (option.value === selectedOption && selectedOption !== "-") {
+                        option.style.display = 'none';
+                    } else {
+                        option.style.display = '';
+                    }
+                });
+            }
+        });
+    }
+
+    typeSelects.forEach((select, index) => {
+        select.addEventListener('change', function(event) {
+            const selectedOption = event.target instanceof HTMLSelectElement ? event.target.value : null;
+            if (selectedOption) {
+                updateSelectOptions(selectedOption, select);
+
+                // Disable/enable the second select based on the first select
+                if (index === 0) {
+                    if (selectedOption === '-') {
+                        (typeSelects[1] as HTMLSelectElement).disabled = true;
+                        (typeSelects[1] as HTMLSelectElement).value = '-'; // Reset the second select to "-"
+                    } else {
+                        (typeSelects[1] as HTMLSelectElement).disabled = false;
+                    }
+                }
+
+                // Filter Pokémon when any select changes
+                filterPokemon();
+            }
+        });
+    });
+</script>

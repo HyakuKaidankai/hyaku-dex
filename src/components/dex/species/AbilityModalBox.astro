@@ -1,0 +1,38 @@
+---
+const { abilityName, modalId } = Astro.props
+
+
+import AbilityData from '../../../data/ability_data.json';
+
+function nl2br(text: string) {
+  return text.replace(/\n/g, '<br>');
+}
+
+function getAbilityEffect(ability: string) {
+    if(data && data["Effect 2"]) {
+        return data["Effect 2"];
+    } else if(data && data["Effect"]) {
+        return data["Effect"]
+    } else {
+        return "Not found"
+    }
+}
+
+let data = AbilityData.find((item:any) => item.Name.toLowerCase() === abilityName.toLowerCase())!;
+
+---
+<dialog id={modalId} class="modal">
+    <div class="modal-box">
+        <form method="dialog">
+            <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
+          </form>              
+        <div class="w-full text-center text-lg font-semibold tracking-wide">{abilityName}</div>
+        <div class="divider"></div>
+        <div class="mt-[10px] font-semibold" set:html={`Frequency: ${nl2br( data["Frequency"] )}`}></div>
+        <div class="divider"></div>
+        <div set:html={nl2br(getAbilityEffect(abilityName))}></div>
+    </div>
+    <form method="dialog" class="modal-backdrop">
+        <button>close</button>
+    </form>
+</dialog>

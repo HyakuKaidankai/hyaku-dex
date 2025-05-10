@@ -1,0 +1,14 @@
+@import "tailwindcss";
+@plugin "daisyui";
+
+@source inline("bg-[#fff]");
+@source inline("h-[30px]");
+@source inline("font-bold");
+
+@source inline("py-[5px]");
+@source inline("px-[14px]");
+@source inline("text-sm");
+
+@theme {
+    --color-pkb-red: #ed5564;
+}

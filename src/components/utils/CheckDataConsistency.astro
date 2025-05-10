@@ -1,0 +1,76 @@
+---
+/*
+    This is a special component, that should render nothing on build.
+    There has been some issues on how to match data between the JSON files, specially when it comes to obtain data for alternative forms of pokemon.
+    The following procedures help us identify when a Pokemon on the basic_data.json is not getting some kind of data that is obtained by searching the other JSONs.
+*/
+// Data obtained from the character sheet on Google Sheets - Contains the pokemon lists with its most important info
+import BasicData from '../../data/basic_data.json';
+
+import DexInfo from '../../data/dex_info_compressed.json';
+
+// Data obtained from the character sheet on Google Sheets - Contains the list of abilities per pokemon
+import PkmnAbility from '../../data/pkmn_ability.json';
+
+// Helper function that matches the data in BasicData with the json that contains the scrapped Dex files data
+import { getDexInfoData } from '../utils/GetDexInfoData.ts';
+
+import { getMoveData } from '../utils/GetMoveData.ts';
+
+import { getBasicDataFromDexName } from '../utils/GetBasicDataFromDexName.ts';
+
+function searchAbilityByName(name: string) {
+  return PkmnAbility.find((item: any) => item.name.toLowerCase() === name.toLowerCase());
+}
+
+function checkStuff() {
+    BasicData.map( (pkmn:any) => {
+        if(!pkmn["Species Name"]) {
+            console.log(pkmn)
+        }
+        
+        let abs = searchAbilityByName(pkmn["Species Name"])
+        if(!abs) {
+            console.log("Abilities")
+            console.log(pkmn["Species Name"])
+        }
+
+        let data = getDexInfoData(pkmn["Species Name"]);
+        if(!data) {
+            console.log("Data matching from basic to dex");
+            console.log('["' + pkmn["Species Name"] + '", ""],');
+        }
+
+        let evo = data.newEvo
+        if(!evo) {
+            console.log("Evo");
+            console.log(pkmn["Species Name"]);
+        }
+
+        let moves = data.move
+        if(!moves) {
+            console.log("Moves");
+            console.log(pkmn["Species Name"]);
+        }
+
+        for(let lvmove of data.move.lv) {
+            let mv = getMoveData(lvmove.name)
+            if(!mv) {
+                console.log(lvmove.name);
+            }
+        }
+
+    })
+
+    DexInfo.map( (pkmn:any) => {
+        let data = getBasicDataFromDexName(pkmn.name)
+        if (!data) {
+            console.log("Data matching from dex to basic")
+            console.log(pkmn.name)
+        }
+    })
+}
+console.log("Checking consistency...")
+checkStuff()
+console.log("Consistency check finished.")
+---

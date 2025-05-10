@@ -1,0 +1,30 @@
+---
+const { modalId, moveName } = Astro.props
+
+import { getMoveData } from '../../utils/GetMoveData.ts';
+
+let data = getMoveData(moveName);
+
+function nl2br(text: string) {
+  return text.replace(/\n/g, '<br>');
+}
+---
+<dialog id={modalId} class="modal">
+    <div class="modal-box">
+        <form method="dialog">
+            <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
+        </form>              
+        <div class="w-full text-center text-lg font-semibold tracking-wide">{moveName}</div>
+        <div class="divider"></div>
+        <div class="mt-[10px] font-semibold" set:html={`Type: ${nl2br( data["Type__1"] )}`}></div>
+        <div class="mt-[10px] font-semibold" set:html={`Category: ${nl2br( data["Category__1"] )}`}></div>
+        <div class="mt-[10px] font-semibold" set:html={`Damage base: ${data["DB"]}`}></div>
+        <div class="mt-[10px] font-semibold" set:html={`Accuracy check: ${data["AC"]}`}></div>
+        <div class="mt-[10px] font-semibold" set:html={`Range: ${nl2br( data["Range"] )}`}></div>
+        <div class="divider"></div>
+        <div set:html={`${nl2br(data["Effects"])}`}></div>
+    </div>
+    <form method="dialog" class="modal-backdrop">
+        <button>close</button>
+    </form>
+</dialog>

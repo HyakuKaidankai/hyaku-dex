@@ -1,0 +1,23 @@
+---
+let stats = ["HP", "Attack", "Defense", "Sp. Atk", "Sp. Def", "Speed"]
+const { pkmn } = Astro.props;
+---
+<div class="card bg-base-200 text-neutral-content border-base-300 rounded-box border w-full md:w-[350px]">
+    <div class="card-body p-[15px]"> 
+        <p class="px-4 pb-2 text-xs opacity-60 tracking-wide">Base stats</p>
+        <div class="grid grid-cols-4 gap-2">
+            <div class="grid grid-cols-3 gap-2 col-span-3">
+                {stats.map( stat => (
+                    <div class="card bg-base-100 border border-base-300 p-[5px] transition-all duration-200 ease-in-out hover:border-pkb-red">                    
+                        <div class="font-base text-sm text-center">{stat}</div>
+                        <div class="font-semibold text-pkb-red text-lg text-center opacity-80 tabular-nums">{pkmn[stat]}</div>
+                    </div>
+                ))}            
+            </div>    
+            <div class="col-span-1 card bg-base-100 border border-base-300 p-[5px] flex flex-col justify-center transition-all duration-200 ease-in-out hover:border-pkb-red">
+                <div class="font-semibold text-lg text-center">Total</div>
+                <div class="font-semibold text-pkb-red text-lg text-center opacity-80 tabular-nums">{stats.reduce((sum, stat) => sum + pkmn[stat], 0) }</div>
+            </div> 
+        </div>          
+    </div>
+</div>

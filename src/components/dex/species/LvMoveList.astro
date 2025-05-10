@@ -1,0 +1,46 @@
+---
+import { getDexInfoData } from '../../utils/GetDexInfoData.ts';
+import { getMoveData } from '../../utils/GetMoveData.ts';
+import MoveModalBox from './MoveModalBox.astro';
+
+const { pkmn } = Astro.props;
+
+const moveList = getDexInfoData(pkmn["Species Name"]).move.lv;
+
+function isStab(pkmn: any, type: any) {
+  let matchFirst = type["Type__1"].toLowerCase() === pkmn["Type1"].toLowerCase();
+  let matchSecond = type["Type__1"].toLowerCase() === pkmn["Type2"].toLowerCase();
+    return ( (matchFirst || matchSecond) );
+}
+---
+<div class="card bg-base-200 text-neutral-content border-base-300 rounded-box border">
+    <div class="card-body p-[15px]">
+        <p class="px-4 pb-2 text-xs opacity-60 tracking-wide">Move list</p>
+        <div class="overflow-x-auto">
+            <table class="table table-xs">
+              <thead>
+                <tr>
+                  <th>Level</th>
+                  <th>Move</th>
+                  <th>Type</th>
+                </tr>
+              </thead>
+              <tbody>
+                {moveList.map((move: any) => {
+                  const modalId = (`lvmove${move.name.replace(" ","").replace("-","").replace("*","")}`)
+                  return (
+                    <tr class={`hover:bg-base-300 cursor-pointer`} onclick={`${modalId}.showModal()`}>
+                        <td>{move.lv}</td> 
+                        <td class={`${move.sgn && "text-pkb-red font-semibold"}`}>{move.name}</td>
+                        <td class={`${isStab(pkmn, getMoveData(move.name)) && "text-pkb-red font-semibold"}`}>{getMoveData(move.name)?.["Type__1"] ?? "Unknown"}</td>
+                    </tr>
+                )
+                })}
+              </tbody>
+            </table>
+            {moveList.map((move: any) => {
+                  const modalId = (`lvmove${move.name.replace(" ","").replace("-","").replace("*","")}`)
+              return ( <MoveModalBox modalId={modalId} moveName={move.name}/> )
+            })}
+    </div>
+</div>

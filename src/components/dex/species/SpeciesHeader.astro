@@ -1,0 +1,37 @@
+---
+import AltNames from "../../../data/alt_names.json";
+import TypeBadge from "../../../components/ui/TypeBadge.astro";
+
+const { pkmn } = Astro.props
+
+function getAltName(name: string) {
+    let n = name.toLowerCase();
+    let res = AltNames.find(data => data["Canonical Name"]?.toLowerCase() === n);
+    if(res) {
+        return res["Readable name"]
+    } else {
+        return name
+    }
+}
+
+
+import TypeData from "../../../data/type_data.json";
+function getColor(name: string) {
+    let n = name.toLowerCase();
+    let type = TypeData.find(type => type.name === n)!;
+    return type;
+}
+
+const pkmnAltName = getAltName(pkmn["Species Name"])
+---  
+<div class="card bg-base-200 text-neutral-content border-base-300 rounded-box border w-full md:w-auto flex-1">
+    <div class="card-body p-[15px]">
+        <div class="flex h-full justify-center gap-2 items-center flex-wrap">
+            <h1 class="text-2xl font-semibold tracking-wider mr-[50px]">{pkmnAltName}</h1>
+            <div class="flex gap-2">
+                { pkmn["Type1"] && <TypeBadge typeName={ pkmn["Type1"] } /> }
+                { pkmn["Type2"] && <TypeBadge typeName={ pkmn["Type2"] } /> }   
+            </div>
+        </div>        
+    </div>
+</div>     

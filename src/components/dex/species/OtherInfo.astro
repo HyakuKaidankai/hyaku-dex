@@ -1,0 +1,61 @@
+---
+const { pkmn } = Astro.props
+
+// Fetch Pokémon data at build time
+const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${pkmn["API ID"]}/`);
+const data = await response.json();
+const species_response = await fetch(data.species.url);
+const species_data = await species_response.json();
+
+const height = (data.height * 0.1).toFixed(1);
+const weight = (data.weight * 0.1).toFixed(1);
+const gender_rate = species_data.gender_rate
+const gender_percentage_female = gender_rate * 100 / 8
+const gender_percentage_male = 100 - gender_percentage_female
+
+let habitat = "Unknown"
+
+if(species_data.habitat) {
+    const h_response = await fetch(species_data.habitat.url);
+    const h_data = await h_response.json();    
+    habitat = h_data.names.find( (names: any) => names.language.name == "en").name;
+}
+
+---
+<div class="card bg-base-200 text-neutral-content border-base-300 rounded-box border">
+    <div class="card-body p-[15px]">
+        <ul class="list">
+            <li class="px-4 pb-2 text-xs opacity-60 tracking-wide">Other information</li>
+            <li class="list-row py-2">
+                <div class="list-col-grow">Size</div>
+                <div>{pkmn.Size} <small class="tabular-nums opacity-80 font-semibold">({height}m)</small></div>    
+            </li>         
+            <li class="list-row py-2">
+                <div class="list-col-grow">Weight class</div> 
+                <div>{pkmn.Weight}  <small class="tabular-nums opacity-80 font-semibold">({weight}kg)</small></div>
+            </li> 
+            <li class="list-row py-2">
+                <div class="list-col-grow">Gender distribution</div>
+                {gender_rate == -1 && 
+                <div>No gender</div>
+                }
+                {gender_rate != -1 &&
+                
+                <div>
+                    <div class="text-right">{gender_percentage_male}%</div>
+                    <div class="text-right">{gender_percentage_female}%</div>
+                </div>
+                <div>
+                    <div class="text-right">male</div>
+                    <div class="text-right">female</div>
+                </div>
+                }
+            </li>                     <!-- PokeAPI v2/pokemon-species/{id or name}/ -> gender_rate (En octavos, probabilidad de ser femenino) -->
+            <li class="list-row py-2">
+                <div class="list-col-grow">Habitat</div>
+                <div class="capitalize">{habitat}</div>
+            </li>           
+        </ul>
+    </div>
+</div>
+

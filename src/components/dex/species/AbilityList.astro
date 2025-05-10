@@ -1,0 +1,46 @@
+---
+import PkmnAbility from '../../../data/pkmn_ability.json';
+import AbilityData from '../../../data/ability_data.json';
+import AbilityModalBox from './AbilityModalBox.astro';
+
+const { pkmn } = Astro.props
+
+function searchAbilityByName(name: string) {
+  return PkmnAbility.find((item: any) => item.name.toLowerCase() === name.toLowerCase());
+}
+
+function nl2br(text: string) {
+  return text.replace(/\n/g, '<br>');
+}
+
+function getAbilityFrequency(ability: string) {
+    let data = AbilityData.find((item:any) => item.Name.toLowerCase() === ability.toLowerCase())!;
+    return data["Frequency"]
+}
+
+let abs = searchAbilityByName(pkmn["Species Name"])
+---
+<div class="card bg-base-200 text-neutral-content border-base-300 rounded-box border">
+    <div class="card-body p-[15px]">
+        <ul class="list">
+            <li class="px-4 pb-2 text-xs opacity-60 tracking-wide">Abilities</li>
+            {[...Array(6).keys()].map(i => {
+                const typeKey = (`type${i + 1}`)
+                const abilityKey = (`ability${i + 1}`)
+                const modalId = (`ability${pkmn["Species Name"].replaceAll("-","")}${i}`)
+                if (abs && abs[typeKey] && abs[abilityKey]) {
+                    return (
+                        <li class="list-row hover:bg-base-300 py-2 cursor-pointer" onclick={`${modalId}.showModal()`}>
+                            <div class="list-col-grow mr-[10px]">
+                                <div>{abs[abilityKey]}</div>
+                                <div class="text-xs font-thin">{abs[typeKey]}</div>
+                            </div>                 
+                            <AbilityModalBox modalId={ modalId} abilityName = { abs[abilityKey] } />
+                        </li>
+                    );
+                }
+                return null;
+            })}
+        </ul>
+    </div>
+</div>
