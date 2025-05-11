@@ -26,12 +26,12 @@ const skill_keys = [
     <div class="card-body p-[15px]">
         <p class="px-4 pb-2 text-xs opacity-60 tracking-wide">Skill list</p>
         <div class="grid grid-cols-4 gap-2">
-                {skill_keys.keys().map( (i:any) => {
+                {skill_keys.map( (skill:string, i:any) => {
                     let skill_mod_key =  (i == 0) ? `Mod`: `Mod__${i}`
                     return (
                     <div class="card bg-base-100 border border-base-300 p-[5px]">                    
-                        <div class="font-base text-xs text-center">{skill_keys[i]}</div>
-                        <div class="font-thin text-xs text-center opacity-80 tabular-nums">{pkmn[skill_keys[i]]}d+{pkmn[skill_mod_key]}</div>
+                        <div class="font-base text-xs text-center">{skill}</div>
+                        <div class="font-thin text-xs text-center opacity-80 tabular-nums">{pkmn[skill]}d+{pkmn[skill_mod_key]}</div>
                     </div>
                 )
                 })}            
