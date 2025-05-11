@@ -6,9 +6,7 @@ import MovesData from '../../../data/moves_data.json';
 
 const { pkmn } = Astro.props;
 
-const isMew = pkmn["Species Name"].toLowerCase() == "mew"
-
-const moveList = !isMew ? (getDexInfoData(pkmn["Species Name"]).move.other) : MovesData ;
+const moveList = getDexInfoData(pkmn["Species Name"]).move.core;
 
 function isStab(pkmn: any, type: any) {
   let matchFirst = type["Type__1"].toLowerCase() === pkmn["Type1"].toLowerCase();
@@ -23,7 +21,7 @@ const pagesMap = [...Array(numberOfPages).keys()]
 ---
 <div class="card bg-base-200 text-neutral-content border-base-300 rounded-box border">
     <div class="card-body p-[15px]">
-        <p class="px-4 pb-2 text-xs opacity-60 tracking-wide">TM/Tutor list</p>
+        <p class="px-4 pb-2 text-xs opacity-60 tracking-wide">Zygarde Core move list</p>
         <div class="overflow-x-auto">
             <table class="table table-xs">
               <thead>
@@ -33,7 +31,7 @@ const pagesMap = [...Array(numberOfPages).keys()]
                 </tr>
               </thead>
               <tbody>
-                {!isMew && moveList.map((move: any, index: any) => {
+                {moveList.map((move: any, index: any) => {
                   const modalId = (`lvmove${move.name.replace(" ","").replace("-","").replace("*","")}`)
                   const pageNumber = Math.ceil((index + 1) / movesPerPage);
                   if(!getMoveData(move.name)){
@@ -41,38 +39,16 @@ const pagesMap = [...Array(numberOfPages).keys()]
                   }
                   return (
                     <tr class={`hover:bg-base-300 cursor-pointer other-move-row page-${pageNumber}`} onclick={`${modalId}.showModal()`}>
-                        <td>{move.natural && "(N)"} </td>
                         <td class={`${move.sgn && "text-pkb-red font-semibold"}`}>{move.name}</td>
                         <td class={`${isStab(pkmn, getMoveData(move.name)) && "text-pkb-red font-semibold"}`}>{getMoveData(move.name)["Type__1"] ?? "Unknown"}</td>
                     </tr>
                   )
                 })}
-                {isMew && moveList.map((move: any, index: any) => {
-                  const modalId = (`lvmove${move.Name.replace(" ","").replace("-","").replace("*","")}`)
-                  const pageNumber = Math.ceil((index + 1) / movesPerPage);
-                  return (
-                    <tr class={`hover:bg-base-300 cursor-pointer other-move-row page-${pageNumber}`} onclick={`${modalId}.showModal()`}>
-                        <td class={`${move.sgn && "text-pkb-red font-semibold"}`}>{move.Name}</td>
-                        <td class={`${isStab(pkmn, move) && "text-pkb-red font-semibold"}`}>{move["Type__1"] ?? "Unknown"}</td>
-                    </tr>
-                  )
-                })}
               </tbody>
-            </table>
-            <div class="join w-full justify-center">
-              {pagesMap.map((i: any) => {
-                return (
-                <button class="join-item btn btn-sm" onclick={`showPage(${i + 1})`}>{i + 1}</button>
-                )
-              })}
-            </div>            
-            {!isMew && moveList.map((move: any) => {
+            </table>            
+            {moveList.map((move: any) => {
                   const modalId = (`lvmove${move.name.replace(" ","").replace("-","").replace("*","")}`)
               return ( <MoveModalBox modalId={modalId} moveName={move.name}/> )
-            })}
-            {isMew && moveList.map((move: any) => {
-              const modalId = (`lvmove${move.Name.replace(" ","").replace("-","").replace("*","")}`)
-              return ( <MoveModalBox modalId={modalId} moveName={move.Name}/> )
             })}
     </div>
 </div>

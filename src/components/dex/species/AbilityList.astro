@@ -13,11 +13,6 @@ function nl2br(text: string) {
   return text.replace(/\n/g, '<br>');
 }
 
-function getAbilityFrequency(ability: string) {
-    let data = AbilityData.find((item:any) => item.Name.toLowerCase() === ability.toLowerCase())!;
-    return data["Frequency"]
-}
-
 let abs = searchAbilityByName(pkmn["Species Name"])
 ---
 <div class="card bg-base-200 text-neutral-content border-base-300 rounded-box border">

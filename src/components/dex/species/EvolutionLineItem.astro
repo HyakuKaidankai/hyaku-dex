@@ -24,7 +24,7 @@ function getAltName(name: string) {
 const pkmnAltName = getAltName(pkmn["Species Name"])
  
 --- 
-<a class="list-col-grow opacity-80 hover:opacity-100 transition-all duration-200 ease-in-out" href={`/pkmn/${pkmn["Species Name"]}`}>
+<a class="list-col-grow opacity-80 hover:opacity-100 transition-all duration-200 ease-in-out" href={`/hyaku-dex/pkmn/${pkmn["Species Name"]}`}>
     <div class="flex rounded-box rounded-sm p-[2px] gap-4" style={{
         background: `linear-gradient(0deg,${getColor(pkmn["Type1"]).color}90 0%, ${getColor(pkmn["Type1"]).color}40 40%, transparent 90%);`
       }}>

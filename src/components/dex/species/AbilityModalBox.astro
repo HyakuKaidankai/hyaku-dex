@@ -20,6 +20,10 @@ function getAbilityEffect(ability: string) {
 
 let data = AbilityData.find((item:any) => item.Name.toLowerCase() === abilityName.toLowerCase())!;
 
+if(!data) {
+    console.log(abilityName);
+}
+
 ---
 <dialog id={modalId} class="modal">
     <div class="modal-box">

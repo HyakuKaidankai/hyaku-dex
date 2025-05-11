@@ -269,6 +269,15 @@
       "Keywords": "2-16 Errata",
       "Effect 2": "Keywords - 2-16 Errata\nThe Weather changes to be Sunny for 1 full round."
     },
+  {
+    "Name": "Drought / Drizzle",
+    "Frequency": "Scene x3 - Swift Action",
+    "Effect": "Choose either of one. The Weather changes to be Sunny / Rainy for 1 full round.",
+    "Trigger": "",
+    "Target": "",
+    "Keywords": "2-16 Errata",
+    "Effect 2": "Keywords - 2-16 Errata\nThe Weather changes to be Sunny / Rainy for 1 full round."
+  },
     {
       "Name": "Drown Out",
       "Frequency": "Scene x2 - Free Action",
@@ -430,6 +439,14 @@
       "Target": "",
       "Keywords": "2-16 Errata",
       "Effect 2": "Keywords - 2-16 Errata\nThe user's Weight Class is increased by +2. Their Defense Base Stat is increased by +2, but their Speed Base Stat is decreased by 2."
+    },{
+      "Name": "Light Metal or Heavy Metal",
+      "Frequency": "Static",
+      "Effect": "The user's Weight Class is decreased/increased by 2. Their Speed/Defense Base Stat is increased by +2, but their Defense/Speed Base Stat is decreased by 2.",
+      "Trigger": "",
+      "Target": "",
+      "Keywords": "2-16 Errata",
+      "Effect 2": "Keywords - 2-16 Errata\nThe user's Weight Class is decreased/increased by 2. Their Speed/Defense Base Stat is increased by +2, but their Defense/Speed Base Stat is decreased by 2."
     },
     {
       "Name": "Heliovolt",
@@ -864,6 +881,24 @@
       "Effect 2": "Keywords - 2-16 Errata\nTrigger - The user is hit by a Bug, Dark, or Ghost Type Move\nThe user's Speed is raised by +1 Combat Stage, and may immediately Disengage as a Free Action."
     },
     {
+      "Name": "Rock Head",
+      "Frequency": "Static",
+      "Effect": "The user ignores the Recoil keyword when attacking. If the user moves at least 4 meters in a straight line towards a foe before attacking that foe with a physical attack, they may add a +2d6 Bonus to the Damage Roll against that foe.",
+      "Trigger": "",
+      "Target": "",
+      "Keywords": "2-16 Errata",
+      "Effect 2": "Keywords - 2-16 Errata\nThe user ignores the Recoil keyword when attacking. If the user moves at least 4 meters in a straight line towards a foe before attacking that foe with a physical attack, they may add a +2d6 Bonus to the Damage Roll against that foe."
+    },
+    {
+      "Name": "Reckless (Red) /\nRock Head (Blue) /\nRattled (White)",
+      "Frequency": "At-Will - Free Action (Rattled) / Static (Rock Head/Reckless)",
+      "Effect": "Rattled: The user's Speed is raised by +1 Combat Stage, and may immediately Disengage as a Free Action.\n\nReckless:Increases the Damage Base of Moves with the Exhaust, Recoil, or Reckless Keywords by +3.\nReckless Moves: Jump Kick, Hi Jump Kick, Close Combat, Draco Meteor, Hammer Arm, Leaf Storm, Outrage, Overheat, Petal Dance, Psycho Boost, Superpower, Thrash, and V-Create.\n\nRock Head: The user ignores the Recoil keyword when attacking. If the user moves at least 4 meters in a straight line towards a foe before attacking that foe with a physical attack, they may add a +2d6 Bonus to the Damage Roll against that foe.",
+      "Trigger": "Rattled: The user is hit by a Bug, Dark, or Ghost Type Move",
+      "Target": "",
+      "Keywords": "2-16 Errata",
+      "Effect 2": "Rattled: The user's Speed is raised by +1 Combat Stage, and may immediately Disengage as a Free Action.\n\nReckless:Increases the Damage Base of Moves with the Exhaust, Recoil, or Reckless Keywords by +3.\nReckless Moves: Jump Kick, Hi Jump Kick, Close Combat, Draco Meteor, Hammer Arm, Leaf Storm, Outrage, Overheat, Petal Dance, Psycho Boost, Superpower, Thrash, and V-Create.\n\nRock Head: The user ignores the Recoil keyword when attacking. If the user moves at least 4 meters in a straight line towards a foe before attacking that foe with a physical attack, they may add a +2d6 Bonus to the Damage Roll against that foe."
+    },
+    {
       "Name": "Reckless",
       "Frequency": "Static",
       "Effect": "Increases the Damage Base of Moves with the Exhaust, Recoil, or Reckless Keywords by +3.\nReckless Moves: Jump Kick, Hi Jump Kick, Close Combat, Draco Meteor, Hammer Arm, Leaf Storm, Outrage, Overheat, Petal Dance, Psycho Boost, Superpower, Thrash, and V-Create.",
@@ -898,6 +933,15 @@
       "Target": "",
       "Keywords": "2-16 Errata",
       "Effect 2": "Keywords - 2-16 Errata\nTrigger - A Round Begins\nThe user may take their turn at the top of the round. Priority, Interrupt, or Reaction Moves or Abilities cannot be declared in response to the user's turn.\nBonus: The user's Sky capability is increased by +2"
+    },
+    {
+      "Name": "Frighten (male) / Rocket (female)",
+      "Frequency": "Scene 2x - Swift Action (Frighten) / Scene - Free Action (Rocket)",
+      "Effect": "Choose depending on the gender.\n Frighten: The target immediately Shifts 3m away from the user using their highest usable movement capability, and towards their Trainer if possible. The target is then Slowed for 1 full round. You may target a specific foe only once per Scene with Frighten.\n\nRocket: Trigger - A Round Begins\nThe user may take their turn at the top of the round. Priority, Interrupt, or Reaction Moves or Abilities cannot be declared in response to the user's turn.\nBonus: The user's Sky capability is increased by +2",
+      "Trigger": "Rocket: A Round Begins",
+      "Target": "Frighten: A Pokemon or Trainer within 5m",
+      "Keywords": "Gen 9",
+      "Effect 2": "Choose depending on the gender.\n Frighten: The target immediately Shifts 3m away from the user using their highest usable movement capability, and towards their Trainer if possible. The target is then Slowed for 1 full round. You may target a specific foe only once per Scene with Frighten.\n\nRocket: Trigger - A Round Begins\nThe user may take their turn at the top of the round. Priority, Interrupt, or Reaction Moves or Abilities cannot be declared in response to the user's turn.\nBonus: The user's Sky capability is increased by +2"
     },
     {
       "Name": "Root Down",
@@ -952,6 +996,15 @@
       "Target": "",
       "Keywords": "2-16 Errata",
       "Effect 2": "Keywords - 2-16 Errata\nThe Weather changes to a Sandstorm for 1 full round.\n Bonus: The user is immune to Hit Point loss from Sandstorms."
+    },
+    {
+      "Name": "Sand Stream / Snow Warning",
+      "Frequency": "3x Scene - Swift Action",
+      "Effect": "Choose either of one. The Weather changes to Snowy / a Sandstorm for 1 full Round. \nBonus: The user is not damaged by Hail / Sandstorms.",
+      "Trigger": "",
+      "Target": "",
+      "Keywords": "Gen 9 Errata",
+      "Effect 2": "Keywords - Gen 9 Errata\nChoose either of one. The Weather changes to Snowy / a Sandstorm for 1 full Round. \nBonus: The user is not damaged by Hail / Sandstorms."
     },
     {
       "Name": "Sand Veil",
@@ -1161,6 +1214,15 @@
       "Effect 2": "Keywords - 2-16 Errata\nThe user may activate Starlight while exposed to moonlight or starlight to become Luminous. As a Swift Action, the user may expend the Luminous condition to gain +2 Special Defense CS and +2 Evasion for the rest of the Scene."
     },
     {
+      "Name": "Sunglow or Starlight",
+      "Frequency": "Daily - Swift Action",
+      "Effect": "The user may activate Sunglow/Starlight while exposed to sunlight to become Radiant/Luminous. As a Swift Action, the user may expend the Radiant/Luminous condition to gain +2 Attack/Special Defense CS and +2 Accuracy/Evasion for the rest of the Scene.",
+      "Trigger": "",
+      "Target": "",
+      "Keywords": "2-16 Errata",
+      "Effect 2": "Keywords - 2-16 Errata\nThe user may activate Sunglow/Starlight while exposed to sunlight to become Radiant/Luminous. As a Swift Action, the user may expend the Radiant/Luminous condition to gain +2 Attack/Special Defense CS and +2 Accuracy/Evasion for the rest of the Scene."
+    },
+    {
       "Name": "Starswirl",
       "Frequency": "Scene - Swift Action",
       "Effect": "Connection - Rapid Spin. The user may activate this Ability to user Rapid Spin as a Swift Action.",
@@ -1339,6 +1401,22 @@
       "Target": "",
       "Keywords": "2-16 Errata",
       "Effect 2": "Keywords - 2-16 Errata\nThe user and all allies within 3 meters gain a +5 Bonus to Damage Rolls with Moves matching the user's Primary Type."
+    },    {
+      "Name": "Type Aura (Fairy)",
+      "Frequency": "Static",
+      "Effect": "The user and all allies within 3 meters gain a +5 Bonus to Damage Rolls with Fairy moves.",
+      "Trigger": "",
+      "Target": "",
+      "Keywords": "2-16 Errata",
+      "Effect 2": "Keywords - 2-16 Errata\nThe user and all allies within 3 meters gain a +5 Bonus to Damage Rolls with Fairy moves."
+    },    {
+      "Name": "Type Aura (Dark)",
+      "Frequency": "Static",
+      "Effect": "The user and all allies within 3 meters gain a +5 Bonus to Damage Rolls with dark moves.",
+      "Trigger": "",
+      "Target": "",
+      "Keywords": "2-16 Errata",
+      "Effect 2": "Keywords - 2-16 Errata\nThe user and all allies within 3 meters gain a +5 Bonus to Damage Rolls with dark moves."
     },
     {
       "Name": "Unburden",
@@ -2806,6 +2884,15 @@
       "Target": "",
       "Keywords": "",
       "Effect 2": "Trigger - A foe within 10m has Combat Stages lowered\nThe target loses an additional Combat Stage in one stat lowered by the triggering effect."
+    },
+    {
+      "Name": "Plus or Minus",
+      "Frequency": "Scene x2 - Free Action, Reaction",
+      "Effect": "Choose one.\n\nMinus: The target loses an additional Combat Stage in one stat lowered by the triggering effect.\n\n Plus: The target gains an additional Combat Stage in one stat raised by the triggering effect.",
+      "Trigger": "An ally within 10m has Combat Stages lowered/raised",
+      "Target": "",
+      "Keywords": "",
+      "Effect 2": "Choose one.\n\nMinus: The target loses an additional Combat Stage in one stat lowered by the triggering effect.\n\n Plus: The target gains an additional Combat Stage in one stat raised by the triggering effect."
     },
     {
       "Name": "Mirror Armor",
