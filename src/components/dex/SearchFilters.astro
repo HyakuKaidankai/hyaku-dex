@@ -1,5 +1,6 @@
 ---
-import { listTypeWithoutStellar } from "../../components/functions/type.ts";
+import { listTypeWithoutStellar } from "../functions/type.ts";
+import { listAbilities } from '../functions/ability.ts';
 
 ---
 <div id="filterOptions" class="flex mb-[20px] gap-[10px] flex-wrap">
@@ -35,16 +36,37 @@ import { listTypeWithoutStellar } from "../../components/functions/type.ts";
             </select>
         </div>
     </fieldset>
+        <fieldset class="flex-1 fieldset bg-base-200 border-base-300 rounded-box border p-4">
+        <legend class="fieldset-legend">Filter by ability</legend>
+        <div id="typeFilters" class="flex flex-wrap gap-2">
+            <input 
+                id="abilityInput" 
+                type="text" 
+                class="w-full input transition-all duration-300 ease-in-out
+                hover:outline-0 hover:border-pkb-red
+                focus:outline-0 focus:border-pkb-red" 
+                placeholder="Static" 
+                list="abilities" />
+            <datalist id="abilities">
+                { listAbilities().map( (ability: any) => (
+                    <option value={ability.Name}>{ability.Name}</option>
+                ) ) }
+            </datalist>
+        </div>
+    </fieldset>
 </div>
 <script>
+
     // References needed by functions
     const pokemonList = document.getElementById("pokemonList") as HTMLElement;
     const nameSearchInput = document.getElementById('nameSearchInput') as HTMLInputElement;
+    const abilityInput = document.getElementById('abilityInput') as HTMLInputElement;
     const typeSelects = document.querySelectorAll('#typeFilters select');
 
     // Filter by name and type function
     function filterPokemon() {
         const query = nameSearchInput.value.toLowerCase();
+        const abilityQuery = abilityInput.value.toLowerCase();
         const selectedType1 = (typeSelects[0] as HTMLSelectElement).value.toLowerCase();
         const selectedType2 = (typeSelects[1] as HTMLSelectElement).value.toLowerCase();
 
@@ -55,10 +77,17 @@ import { listTypeWithoutStellar } from "../../components/functions/type.ts";
             const altname = item.getAttribute('data-alt-name')?.toLowerCase();
             const type1 = item.getAttribute('data-t1')?.toLowerCase();
             const type2 = item.getAttribute('data-t2')?.toLowerCase();
+            const ability1 = item.getAttribute('data-ab1')?.toLowerCase();
+            const ability2 = item.getAttribute('data-ab2')?.toLowerCase();
+            const ability3 = item.getAttribute('data-ab3')?.toLowerCase();
+            const ability4 = item.getAttribute('data-ab4')?.toLowerCase();
+            const ability5 = item.getAttribute('data-ab5')?.toLowerCase();
+            const ability6 = item.getAttribute('data-ab6')?.toLowerCase();
 
             let matchesName = true;
             let matchesType1 = true;
             let matchesType2 = true;
+            let matchesAbility = true;
 
             if (query) {
                 matchesName = (name !== undefined && name.includes(query)) || (altname !== undefined && altname.includes(query));
@@ -72,7 +101,16 @@ import { listTypeWithoutStellar } from "../../components/functions/type.ts";
                 matchesType2 = type1 === selectedType2 || type2 === selectedType2;
             }
 
-            if (matchesName && matchesType1 && matchesType2) {
+            if (abilityQuery) {
+            matchesAbility = (ability1?.toLowerCase() === abilityQuery.toLowerCase()) ||
+                             (ability2?.toLowerCase() === abilityQuery.toLowerCase()) ||
+                             (ability3?.toLowerCase() === abilityQuery.toLowerCase()) ||
+                             (ability4?.toLowerCase() === abilityQuery.toLowerCase()) ||
+                             (ability5?.toLowerCase() === abilityQuery.toLowerCase()) ||
+                             (ability6?.toLowerCase() === abilityQuery.toLowerCase());
+            }   
+
+            if (matchesName && matchesType1 && matchesType2 && matchesAbility) {
                 (item as HTMLElement).style.display = 'inherit';
             } else {
                 (item as HTMLElement).style.display = 'none';
@@ -92,6 +130,7 @@ import { listTypeWithoutStellar } from "../../components/functions/type.ts";
     }
 
     nameSearchInput && nameSearchInput.addEventListener('input', debounce(filterPokemon, 300));
+    abilityInput.addEventListener('input', debounce(filterPokemon, 300));
 
     function updateSelectOptions(selectedOption: any, currentSelect: any) {
         typeSelects.forEach(select => {

@@ -1,5 +1,9 @@
 import AbilityData from '../../assets/data/ability_data.json';
 
+export function listAbilities() {
+    return AbilityData
+}
+ 
 export function getAbility(name: string) {
     return AbilityData.find((item:any) => item.Name.toLowerCase() === name.toLowerCase());
 }

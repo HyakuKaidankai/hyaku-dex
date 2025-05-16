@@ -27,7 +27,7 @@ export function getAltName(name: string) {
 
 // Returns the pokemon abilities
 export function getPkmnAbilities(name: string) {
-     return PkmnAbility.find((item: any) => item.name.toLowerCase() === name.toLowerCase());
+     return PkmnAbility.find((item: any) => item.name.toLowerCase() === name.toLowerCase()) ?? {};
 }
 
 // Returns the dex data of a pokemon, searching with the google sheets names
