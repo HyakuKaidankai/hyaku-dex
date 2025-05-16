@@ -65,7 +65,7 @@ export function getPkmnDexInfo(name: string) {
             }
         }
     }
-    let data = DexFileInfo.find((p:any) => p.name.toLowerCase() === name.toLowerCase());
+    let data = DexFileInfo.find((p:any) => p.name.toLowerCase() === name.toLowerCase()) ?? {};
 
     return data;
 }
