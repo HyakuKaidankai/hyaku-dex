@@ -1,9 +1,9 @@
 ---
 const { modalId, moveName } = Astro.props
 
-import { getMoveData } from '../../utils/GetMoveData.ts';
+import { getMove } from '../../functions/move.ts';
 
-let data = getMoveData(moveName);
+let data = getMove(moveName);
 
 function nl2br(text: string) {
   return text.replace(/\n/g, '<br>');

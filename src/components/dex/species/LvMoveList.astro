@@ -1,11 +1,12 @@
 ---
-import { getDexInfoData } from '../../utils/GetDexInfoData.ts';
-import { getMoveData } from '../../utils/GetMoveData.ts';
 import MoveModalBox from './MoveModalBox.astro';
+
+import { getPkmnDexInfo } from '../../functions/pokemon.ts';
+import { getMove } from '../../functions/move.ts';
 
 const { pkmn } = Astro.props;
 
-const moveList = getDexInfoData(pkmn["Species Name"]).move.lv;
+const moveList = getPkmnDexInfo(pkmn["Species Name"]).move.lv;
 
 function isStab(pkmn: any, type: any) {
   let matchFirst = type["Type__1"].toLowerCase() === pkmn["Type1"].toLowerCase();
@@ -32,7 +33,7 @@ function isStab(pkmn: any, type: any) {
                     <tr class={`hover:bg-base-300 cursor-pointer`} onclick={`${modalId}.showModal()`}>
                         <td>{move.lv}</td> 
                         <td class={`${move.sgn && "text-pkb-red font-semibold"}`}>{move.name}</td>
-                        <td class={`${isStab(pkmn, getMoveData(move.name)) && "text-pkb-red font-semibold"}`}>{getMoveData(move.name)?.["Type__1"] ?? "Unknown"}</td>
+                        <td class={`${isStab(pkmn, getMove(move.name)) && "text-pkb-red font-semibold"}`}>{getMove(move.name)?.["Type__1"] ?? "Unknown"}</td>
                     </tr>
                 )
                 })}

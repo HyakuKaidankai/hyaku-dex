@@ -1,19 +1,11 @@
 ---
-import PkmnAbility from '../../../data/pkmn_ability.json';
-import AbilityData from '../../../data/ability_data.json';
 import AbilityModalBox from './AbilityModalBox.astro';
+
+import { getPkmnAbilities } from '../../../functions/pokemon.ts';
 
 const { pkmn } = Astro.props
 
-function searchAbilityByName(name: string) {
-  return PkmnAbility.find((item: any) => item.name.toLowerCase() === name.toLowerCase());
-}
-
-function nl2br(text: string) {
-  return text.replace(/\n/g, '<br>');
-}
-
-let abs = searchAbilityByName(pkmn["Species Name"])
+let abs = getPkmnAbilities(pkmn["Species Name"]) as unknown as Record<string, string>
 ---
 <div class="card bg-base-200 text-neutral-content border-base-300 rounded-box border">
     <div class="card-body p-[15px]">

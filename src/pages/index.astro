@@ -1,17 +1,17 @@
 ---
-import BasicData from '../data/basic_data.json';
-import Layout from "../layouts/Layout.astro";
+import Layout from '../layouts/Layout.astro';
 import SearchFilters from '../components/dex/SearchFilters.astro';
-import PokemonListCard from '../components/dex/PokemonListCard.astro'; 
-import CheckDataConsistency from '../components/utils/CheckDataConsistency.astro';
+import DexCard from '../components/dex/dexcard/DexCard.astro'; 
+
+import { listPkmn } from '../components/functions/pokemon.ts';
 ---
 <Layout>
     <div class="p-[25px]">
         <SearchFilters/>
         <div id="pokemonList" class="flex flex-wrap justify-center gap-[20px]">
-            {BasicData.map(pkmn => {
+            {listPkmn().map((pkmn: any) => {
                 return (
-                    <PokemonListCard pkmn={pkmn} />
+                    <DexCard pkmn={pkmn} />
                 )
             } )}
         </div>  

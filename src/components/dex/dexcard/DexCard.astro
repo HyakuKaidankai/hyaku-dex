@@ -1,0 +1,19 @@
+---
+import DexCardFilterLink from "./DexCardFilterLink.astro";
+import DexCardImg from "./DexCardImg.astro";
+import DexCardData from "./DexCardData.astro";
+
+import { getTypeColor } from '../../functions/type.ts';
+
+const { pkmn } = Astro.props;
+ 
+---
+<DexCardFilterLink pkmn={pkmn}>
+    <div class="flex w-[380px] h-[110px] bg-base-200 border-base-300 rounded-box border p-[5px]" style={{
+        background: `linear-gradient(0deg,${getTypeColor(pkmn["Type1"]).color} 0%, ${getTypeColor(pkmn["Type1"]).color}60 40%, transparent 100%);`
+      }}>
+        <DexCardImg pkmn={ pkmn } />
+        <DexCardData pkmn={ pkmn} />
+    </div>
+</DexCardFilterLink>
+    

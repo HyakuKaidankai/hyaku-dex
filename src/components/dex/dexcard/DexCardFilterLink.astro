@@ -1,0 +1,12 @@
+---
+import { getAltName } from '../../functions/pokemon.ts';
+
+const { pkmn } = Astro.props;
+---
+<a class="pkmn-container" href={`/hyaku-dex/pkmn/${pkmn["Species Name"]}`}
+data-name={pkmn["Species Name"]} 
+data-alt-name={getAltName(pkmn["Species Name"])}
+data-t1={pkmn["Type1"]} 
+data-t2={pkmn["Type2"]}>
+    <slot />
+</a>

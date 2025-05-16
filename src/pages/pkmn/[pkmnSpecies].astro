@@ -1,12 +1,11 @@
 ---
 import Layout from "../../layouts/Layout.astro";
-import BasicData from "../../data/basic_data.json";
 
 import SpeciesHeader from "../../components/dex/species/SpeciesHeader.astro";
 import SpeciesImage from "../../components/dex/species/SpeciesImage.astro";
 import StatTable from "../../components/dex/species/StatTable.astro";
-import EvolutionLine from "../../components/dex/species/EvolutionLine.astro";
-import AbilityList from "../../components/dex/species/AbilityList.astro";
+import EvolutionLine from "../../components/dex/species/evolution/EvolutionLine.astro";
+import AbilityList from "../../components/dex/species/ability/AbilityList.astro";
 import OtherInfo from "../../components/dex/species/OtherInfo.astro";
 import SkillList from "../../components/dex/species/SkillList.astro";
 import CapabilitiesList from "../../components/dex/species/CapabilitiesList.astro";
@@ -15,9 +14,11 @@ import LinkedMoveList from "../../components/dex/species/LinkedMoveList.astro";
 import ZygardeCoreMoveList from "../../components/dex/species/ZygardeCoreMoveList.astro";
 import OtherMoveList from "../../components/dex/species/OtherMoveList.astro";
 
+import { listPkmn, getPkmn } from "../../components/functions/pokemon.ts";
+
 // Find the specific Pokémon data based on the dynamic parameter
 const { pkmnSpecies } = Astro.params;
-const pkmn = BasicData.find(p => p["Species Name"] === pkmnSpecies);
+const pkmn = getPkmn( pkmnSpecies );
 if (!pkmn) {
   // Handle the case where the Pokémon is not found
   return Response.redirect('/404', 302);
@@ -25,7 +26,7 @@ if (!pkmn) {
 
 export function getStaticPaths() {
     let ret: { params: { pkmnSpecies: string } }[] = [];
-    for(let pkmn of BasicData){
+    for(let pkmn of listPkmn()){
         let static_param = {
             params: {
                 pkmnSpecies: pkmn["Species Name"]
@@ -41,7 +42,7 @@ export function getStaticPaths() {
         <div id="header" class="w-full flex flex-wrap gap-2">
             <div class="card bg-base-200 text-neutral-content border-base-300 rounded-box border">
                 <div class="card-body p-[15px] grid grid-col-4">
-                    <a href="/hyaku-dex"><button class="btn btn-outline border-2 border-pkb-red hover:bg-pkb-red">Back</button></a>     
+                    <a href="/hyaku-dex"><button class="btn btn-outline border-2 border-pkb-red hover:bg-pkb-red">Back to dex</button></a>     
                 </div>
             </div>
             <SpeciesHeader pkmn={ pkmn }/>

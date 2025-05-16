@@ -1,18 +1,18 @@
 ---
-import { getDexInfoData } from '../../utils/GetDexInfoData.ts';
-import { getBasicDataFromDexName } from '../../utils/GetBasicDataFromDexName.ts';
 import EvolutionLineItem from './EvolutionLineItem.astro';
+
+import { getPkmnDexInfo, getPkmnBasicInfo } from '../../../functions/pokemon.ts';
 
 const { pkmn } = Astro.props;
 
-const newEvoInfo = getDexInfoData(pkmn["Species Name"]).newEvo;
+const newEvoInfo = getPkmnDexInfo(pkmn["Species Name"]).newEvo;
 ---
 <div class="card bg-base-200 text-neutral-content border-base-300 rounded-box border w-full md:w-[350px]">
     <div class="card-body p-[15px]">
         <ul class="list">
             <li class="px-4 pb-2 text-xs opacity-60 tracking-wide">Evolution</li>
             {newEvoInfo && newEvoInfo.map((line: any) => {
-                let pkmn = getBasicDataFromDexName(line.name);
+                let pkmn = getPkmnBasicInfo(line.name);
                 let url ="/pkmn/" + pkmn["Species Name"];
                 return (
                     <li class="list-row py-2">

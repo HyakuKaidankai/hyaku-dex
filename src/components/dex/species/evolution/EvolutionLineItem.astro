@@ -1,32 +1,17 @@
 ---
 import {Image} from "astro:assets";
-import TypeData from "../../../data/type_data.json";
-import AltNames from "../../../data/alt_names.json";
+
+import { getTypeColor } from '../../../functions/type.ts';
+import { getAltName } from '../../../functions/pokemon.ts';
 
 const { pkmn, level } = Astro.props;
-
-function getColor(name: string) {
-    let n = name.toLowerCase();
-    let type = TypeData.find(type => type.name === n)!;
-    return type;
-}
-
-function getAltName(name: string) {
-    let n = name.toLowerCase();
-    let res = AltNames.find(data => data["Canonical Name"]?.toLowerCase() === n);
-    if(res) {
-        return res["Readable name"]
-    } else {
-        return name
-    }
-}
 
 const pkmnAltName = getAltName(pkmn["Species Name"])
  
 --- 
 <a class="list-col-grow opacity-80 hover:opacity-100 transition-all duration-200 ease-in-out" href={`/hyaku-dex/pkmn/${pkmn["Species Name"]}`}>
     <div class="flex rounded-box rounded-sm p-[2px] gap-4" style={{
-        background: `linear-gradient(0deg,${getColor(pkmn["Type1"]).color}90 0%, ${getColor(pkmn["Type1"]).color}40 40%, transparent 90%);`
+        background: `linear-gradient(0deg,${getTypeColor(pkmn["Type1"]).color}90 0%, ${getTypeColor(pkmn["Type1"]).color}40 40%, transparent 90%);`
       }}>
         <figure class="flex-none rounded-box">
             <Image 

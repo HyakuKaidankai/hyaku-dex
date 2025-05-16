@@ -1,27 +1,16 @@
 ---
 const { abilityName, modalId } = Astro.props
 
-
-import AbilityData from '../../../data/ability_data.json';
+import { getAbility, getAbilityEffect } from '../../../functions/ability.ts';
 
 function nl2br(text: string) {
   return text.replace(/\n/g, '<br>');
 }
 
-function getAbilityEffect(ability: string) {
-    if(data && data["Effect 2"]) {
-        return data["Effect 2"];
-    } else if(data && data["Effect"]) {
-        return data["Effect"]
-    } else {
-        return "Not found"
-    }
-}
-
-let data = AbilityData.find((item:any) => item.Name.toLowerCase() === abilityName.toLowerCase())!;
+let data = getAbility(abilityName);
 
 if(!data) {
-    console.log(abilityName);
+    console.log("Missing ability:" + abilityName);
 }
 
 ---
@@ -32,9 +21,9 @@ if(!data) {
           </form>              
         <div class="w-full text-center text-lg font-semibold tracking-wide">{abilityName}</div>
         <div class="divider"></div>
-        <div class="mt-[10px] font-semibold" set:html={`Frequency: ${nl2br( data["Frequency"] )}`}></div>
+        <div class="mt-[10px] font-semibold" set:html={data && data["Frequency"] ? `Frequency: ${nl2br(data["Frequency"])}` : "Frequency: Not found"}></div>
         <div class="divider"></div>
-        <div set:html={nl2br(getAbilityEffect(abilityName))}></div>
+        <div set:html={nl2br(getAbilityEffect(data))}></div>
     </div>
     <form method="dialog" class="modal-backdrop">
         <button>close</button>

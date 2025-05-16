@@ -1,14 +1,14 @@
 ---
-import { getDexInfoData } from '../../utils/GetDexInfoData.ts';
-import { getMoveData } from '../../utils/GetMoveData.ts';
 import MoveModalBox from './MoveModalBox.astro';
-import MovesData from '../../../data/moves_data.json';
+
+import { getPkmnDexInfo } from '../../functions/pokemon.ts';
+import { getMove, listMoves } from '../../functions/move.ts';
 
 const { pkmn } = Astro.props;
 
 const isMew = pkmn["Species Name"].toLowerCase() == "mew"
 
-const moveList = !isMew ? (getDexInfoData(pkmn["Species Name"]).move.linked) : MovesData ;
+const moveList = !isMew ? (getPkmnDexInfo(pkmn["Species Name"]).move.linked) : listMoves() ;
 
 function isStab(pkmn: any, type: any) {
   let matchFirst = type["Type__1"].toLowerCase() === pkmn["Type1"].toLowerCase();
@@ -37,13 +37,13 @@ const pagesMap = [...Array(numberOfPages).keys()]
                   console.log(move);
                   const modalId = (`linkedmove${move.replace(" ","").replace("-","").replace("*","")}`)
                   const pageNumber = Math.ceil((index + 1) / movesPerPage);
-                  if(!getMoveData(move)){
+                  if(!getMove(move)){
                     console.log(move);
                   }
                   return (
                     <tr class={`hover:bg-base-300 cursor-pointer other-move-row page-${pageNumber}`} onclick={`${modalId}.showModal()`}>
                         <td>{move}</td>
-                        <td class={`${isStab(pkmn, getMoveData(move)) && "text-pkb-red font-semibold"}`}>{getMoveData(move)["Type__1"] ?? "Unknown"}</td>
+                        <td class={`${isStab(pkmn, getMove(move)) && "text-pkb-red font-semibold"}`}>{getMove(move)["Type__1"] ?? "Unknown"}</td>
                     </tr>
                   )
                 })}

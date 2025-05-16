@@ -1,26 +1,9 @@
 ---
-import AltNames from "../../../data/alt_names.json";
 import TypeBadge from "../../../components/ui/TypeBadge.astro";
 
+import { getAltName } from "../../functions/pokemon.ts";
+
 const { pkmn } = Astro.props
-
-function getAltName(name: string) {
-    let n = name.toLowerCase();
-    let res = AltNames.find(data => data["Canonical Name"]?.toLowerCase() === n);
-    if(res) {
-        return res["Readable name"]
-    } else {
-        return name
-    }
-}
-
-
-import TypeData from "../../../data/type_data.json";
-function getColor(name: string) {
-    let n = name.toLowerCase();
-    let type = TypeData.find(type => type.name === n)!;
-    return type;
-}
 
 const pkmnAltName = getAltName(pkmn["Species Name"])
 ---  

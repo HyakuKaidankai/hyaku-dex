@@ -1,6 +1,6 @@
 ---
-import TypeData from "../../data/type_data.json";
-import { Image } from "astro:assets";
+import { listTypeWithoutStellar } from "../../components/functions/type.ts";
+
 ---
 <div id="filterOptions" class="flex mb-[20px] gap-[10px] flex-wrap">
     <fieldset id="searchFieldset" class="flex-1 fieldset bg-base-200 border-base-300 rounded-box border p-4">
@@ -21,7 +21,7 @@ import { Image } from "astro:assets";
             hover:outline-0 hover:border-pkb-red
             focus:outline-0 focus:border-pkb-red">
                 <option selected>-</option>
-                {TypeData.filter(type => type.name !== 'stellar').map(type=>( 
+                {listTypeWithoutStellar().map((type: any)=>( 
                     <option value={type.name}>{type.name}</option>
                 ))}
             </select>
@@ -29,7 +29,7 @@ import { Image } from "astro:assets";
             hover:outline-0 hover:border-pkb-red
             focus:outline-0 focus:border-pkb-red" disabled>
                 <option selected>-</option>
-                {TypeData.filter(type => type.name !== 'stellar').map(type=>( 
+                {listTypeWithoutStellar().map((type: any)=>( 
                     <option value={type.name}>{type.name}</option>
                 ))}
             </select>
@@ -61,7 +61,7 @@ import { Image } from "astro:assets";
             let matchesType2 = true;
 
             if (query) {
-                matchesName = (name && name.includes(query)) || (altname && altname.includes(query));
+                matchesName = (name !== undefined && name.includes(query)) || (altname !== undefined && altname.includes(query));
             }
 
             if (selectedType1 !== '-') {

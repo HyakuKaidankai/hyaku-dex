@@ -1,5 +1,4 @@
 ---
-import TypeData from "../../data/type_data.json";
 import Bug from "../../assets/types/bug.svg";
 import Dark from "../../assets/types/dark.svg";
 import Dragon from "../../assets/types/dragon.svg";
@@ -18,6 +17,8 @@ import Psychic from "../../assets/types/psychic.svg";
 import Steel from "../../assets/types/steel.svg";
 import Rock from "../../assets/types/rock.svg";
 import Water from "../../assets/types/water.svg";
+
+import { getTypeColor } from "../functions/type.ts";
 
 const { typeName, height= "30px", logoWidth = 19, logoHeight = 19, textSize = "sm", fontWeight = "bold", px = "14px", py = "5px" } = Astro.props;
 
@@ -42,17 +43,12 @@ const typeLogos = {
     water: Water
 };
 
-const TypeLogo = typeLogos[typeName.toLowerCase()];
+const typeKey = typeName.toLowerCase() as keyof typeof typeLogos;
+const TypeLogo = typeLogos[typeKey];
 
-
-function getColor(name: string) {
-    let n = name.toLowerCase();
-    let type = TypeData.find(type => type.name === n)!;
-    return type;
-}
 ---
 <div class={`h-[${height}] text-${textSize} font-${fontWeight} tracking-wide uppercase px-[${px}] py-[${py}] rounded-sm flex gap-[4px]`} style={{
-    backgroundColor: `${getColor(typeName).color}`
+    backgroundColor: `${getTypeColor(typeName).color}`
 }}>
     <TypeLogo width={logoWidth} height={logoHeight}/>{typeName}
 </div>     

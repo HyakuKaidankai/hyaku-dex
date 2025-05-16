@@ -1,31 +1,15 @@
 ---
 import { Image } from "astro:assets";
-import TypeData from "../../../data/type_data.json";
-import AltNames from "../../../data/alt_names.json";
+
+import { getTypeColor } from "../../functions/type.ts";
+ 
 const { pkmn } = Astro.props
 
-function getColor(name: string) {
-    let n = name.toLowerCase();
-    let type = TypeData.find(type => type.name === n)!;
-    return type;
-}
-
-function getAltName(name: string) {
-    let n = name.toLowerCase();
-    let res = AltNames.find(data => data["Canonical Name"]?.toLowerCase() === n);
-    if(res) {
-        return res["Readable name"]
-    } else {
-        return name
-    }
-}
-
-const pkmnAltName = getAltName(pkmn["Species Name"])
 ---  
 <div class="card bg-base-200 text-neutral-content border-base-300 rounded-box border w-full md:w-[350px]">
     <div class="card-body p-[15px]">
         <figure class="p-[5px] rounded-box border-1 border-base-300" style={{
-            backgroundImage: `radial-gradient(circle at center, ${getColor(pkmn["Type1"]).color} 0%, ${getColor(pkmn["Type1"]).color}50 50%, transparent 100%)`
+            backgroundImage: `radial-gradient(circle at center, ${getTypeColor(pkmn["Type1"]).color} 0%, ${getTypeColor(pkmn["Type1"]).color}50 50%, transparent 100%)`
           }}>
             <Image 
             src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${pkmn['API ID']}.png`} 
