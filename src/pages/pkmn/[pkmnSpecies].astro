@@ -9,12 +9,10 @@ import AbilityList from "../../components/dex/species/ability/AbilityList.astro"
 import OtherInfo from "../../components/dex/species/OtherInfo.astro";
 import SkillList from "../../components/dex/species/SkillList.astro";
 import CapabilitiesList from "../../components/dex/species/CapabilitiesList.astro";
-import LvMoveList from "../../components/dex/species/LvMoveList.astro";
-import LinkedMoveList from "../../components/dex/species/LinkedMoveList.astro";
-import ZygardeCoreMoveList from "../../components/dex/species/ZygardeCoreMoveList.astro";
-import OtherMoveList from "../../components/dex/species/OtherMoveList.astro";
+import MoveListTable from "../../components/dex/species/moves/MoveListTable.astro";
 
-import { listPkmn, getPkmn } from "../../components/functions/pokemon.ts";
+import { listPkmn, getPkmn, getPkmnDexInfo } from "../../components/functions/pokemon.ts";
+import { listMoves } from '../../components/functions/move.ts';
 
 // Find the specific Pokémon data based on the dynamic parameter
 const { pkmnSpecies } = Astro.params;
@@ -36,6 +34,22 @@ export function getStaticPaths() {
     }    
     return ret;
 }
+
+const isMew = pkmn["Species Name"].toLowerCase() == "mew";
+const isZygarde = pkmnSpecies.toLowerCase().includes("zygarde");
+const isHoopa = pkmnSpecies.toLowerCase().includes("hoopa");
+const moves = getPkmnDexInfo(pkmn["Species Name"]).move;
+
+let otherMoveList = []
+if(isMew) {
+  otherMoveList = listMoves().map((move:any) => {
+      const { Name, ...rest } = move;
+      return { name: Name, ...rest };
+  });
+} else {
+  otherMoveList = moves.other
+}
+
 ---
 <Layout>    
     <div class="m-[20px] flex flex-wrap gap-2">
@@ -62,14 +76,14 @@ export function getStaticPaths() {
                 <CapabilitiesList pkmn={pkmn} />
             </div>
             <div class="flex flex-col gap-2 w-full md:w-auto">
-                <LvMoveList pkmn={pkmn} />        
-                {pkmnSpecies.toLowerCase().includes("hoopa") && 
-                <LinkedMoveList pkmn={pkmn} />}        
-                {pkmnSpecies.toLowerCase().includes("zygarde") && 
-                <ZygardeCoreMoveList pkmn={pkmn} />}       
+                <MoveListTable title="Move list" pkmn={pkmn} enableLvCol={true} moves={ moves.lv } />
+                {isHoopa && 
+                <MoveListTable title="Linked move list" pkmn={pkmn} moves={ moves.linked } />}    
+                {isZygarde &&                 
+                <MoveListTable title="Zygarde Core move list" pkmn={pkmn} moves={ moves.core } />}       
             </div>
             <div class="flex flex-col gap-2 w-full md:w-auto">
-                <OtherMoveList pkmn={pkmn} />
+                <MoveListTable title="TM/Tutor list" pkmn={pkmn} moves={otherMoveList} enableNatCol={true} enablePagination={true} />
             </div>
         </div>
     </div>

@@ -1,0 +1,79 @@
+---
+import MoveModalBox from './MoveModalBox.astro';
+
+import { moveIsStab } from '../../../functions/pokemon.ts';
+import { getMove } from '../../../functions/move.ts';
+
+const { pkmn, title, moves=[], enableLvCol=false, enableNatCol=false, enablePagination=false} = Astro.props;
+
+const prefix = title.replaceAll(" ", "").replaceAll("/","").replaceAll("-","")
+const movesPerPage = 28
+const numberOfPages = Math.ceil(moves.length / movesPerPage)
+const pagesMap = [...Array(numberOfPages).keys()]
+---
+
+<div class="card bg-base-200 text-neutral-content border-base-300 rounded-box border">
+    <div class="card-body p-[15px]">
+        <p class="px-4 pb-2 text-xs opacity-60 tracking-wide">{title}</p>
+        <div class="overflow-x-auto">
+            <table class="table table-xs">
+                <thead>
+                    <tr>
+                        {enableNatCol && <th></th>}
+                        {enableLvCol && <th>Level</th>}
+                        <th>Move</th>
+                        <th>Type</th>
+                    </tr>
+                </thead>
+                <tbody>
+                { moves && moves.map((move: any, index: any) => {
+                    const moveName = move.name ? move.name : move;
+                    const moveId = moveName.replaceAll(" ","").replaceAll("-","").replaceAll("*","")
+                    const pageNumber = Math.ceil((index + 1) / movesPerPage);
+                    const modalId = prefix + moveId
+                    const paginationClasses = prefix +"-row" + " page-" + pageNumber
+                return (
+                    <tr class={`hover:bg-base-300 cursor-pointer ${enablePagination && paginationClasses}`} onclick={`${modalId}.showModal()`}>
+                        {enableLvCol && <td>{move.lv}</td>} 
+                        {enableNatCol && <td>{move.natural && "(N)"} </td>}
+                        <td class={`${move.sgn && "text-pkb-red font-semibold"}`}>{moveName}</td>
+                        <td class={`${moveIsStab(pkmn, getMove(moveName)) && "text-pkb-red font-semibold"}`}>{getMove(moveName)?.["Type__1"] ?? "Unknown"}</td>
+                    </tr>
+                )
+                })}
+                </tbody>
+            </table>
+            {enablePagination && <div class="join w-full justify-center">
+                {pagesMap.map((i: any) => {
+                return (
+                <button class="join-item btn btn-sm" onclick={`showPage(${i + 1}, "${prefix}")`}>{i + 1}</button>
+                )
+                })}
+            </div>}
+            {moves && moves.map((move: any) => {
+                const moveName = move.name ? move.name : move;
+                const moveId = moveName.replaceAll(" ","").replaceAll("-","").replaceAll("*","")
+                const modalId = prefix + moveId
+                return ( <MoveModalBox modalId={modalId} moveName={moveName}/> )
+            })}
+            <slot/>
+        </div>
+    </div>
+</div>
+{enablePagination && <script is:inline define:vars={{prefix}}>
+  function showPage(pageNumber, rowprefix) {
+    // Hide all rows
+    document.querySelectorAll(`.${rowprefix}-row`).forEach(row => {
+      row.style.display = 'none';
+    });
+
+    // Show rows for the selected page
+    document.querySelectorAll(`.${rowprefix}-row.page-${pageNumber}`).forEach(row => {
+      row.style.display = '';
+    });
+  }  
+  
+  window.showPage = showPage;
+  showPage(1, prefix);
+</script>
+}

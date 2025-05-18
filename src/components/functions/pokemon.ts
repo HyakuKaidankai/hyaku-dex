@@ -65,7 +65,7 @@ export function getPkmnDexInfo(name: string) {
             }
         }
     }
-    let data = DexFileInfo.find((p:any) => p.name.toLowerCase() === name.toLowerCase()) ?? {};
+    let data = DexFileInfo.find((p:any) => p.name.toLowerCase() === name.toLowerCase()) ?? {move:{lv:0}};
 
     return data;
 }
@@ -110,4 +110,10 @@ export function getPkmnBasicInfo(name: string) {
     }
     let data = BasicData.find( (p: any) => p["Species Name"].toLowerCase() == name.toLowerCase());
     return data
+}
+
+export function moveIsStab(pkmn: any, type: any) {
+    let matchFirst = type["Type__1"].toLowerCase() === pkmn["Type1"].toLowerCase();
+    let matchSecond = type["Type__1"].toLowerCase() === pkmn["Type2"].toLowerCase();
+    return ( (matchFirst || matchSecond) );
 }
