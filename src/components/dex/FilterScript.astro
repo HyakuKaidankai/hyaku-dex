@@ -1,0 +1,97 @@
+---
+---
+<script>
+
+    // References needed by functions
+    const pokemonList = document.getElementById("pokemonList") as HTMLElement;
+    const nameSearchInput = document.getElementById('nameSearchInput') as HTMLInputElement;
+    const abilityInput = document.getElementById('abilityInput') as HTMLInputElement;
+
+    // Filter by name and type function
+    function filterPokemon() {
+        const query = nameSearchInput.value.toLowerCase();
+        const abilityQuery = abilityInput.value.toLowerCase();
+        const enabledTypeFilters = Array.from(document.querySelectorAll('.type-filter.filter-type-enabled')).map(el => el.getAttribute('data-type')?.toLowerCase());
+
+        const pokemonItems = pokemonList.getElementsByClassName('pkmn-container');
+
+        for (const item of pokemonItems) {
+            const name = item.getAttribute('data-name')?.toLowerCase();
+            const altname = item.getAttribute('data-alt-name')?.toLowerCase();
+            const type1 = item.getAttribute('data-t1')?.toLowerCase();
+            const type2 = item.getAttribute('data-t2')?.toLowerCase();
+            const ability1 = item.getAttribute('data-ab1')?.toLowerCase();
+            const ability2 = item.getAttribute('data-ab2')?.toLowerCase();
+            const ability3 = item.getAttribute('data-ab3')?.toLowerCase();
+            const ability4 = item.getAttribute('data-ab4')?.toLowerCase();
+            const ability5 = item.getAttribute('data-ab5')?.toLowerCase();
+            const ability6 = item.getAttribute('data-ab6')?.toLowerCase();
+
+            let matchesName = true;
+            let matchesType = true;
+            let matchesAbility = true;
+
+            if (query) {
+                matchesName = (name !== undefined && name.includes(query)) || (altname !== undefined && altname.includes(query));
+            }
+
+           if (enabledTypeFilters.length > 0) {
+                if (enabledTypeFilters.length === 1) {
+                    // If only one type is selected, check if the Pokémon has that type
+                    matchesType = type1 === enabledTypeFilters[0] || type2 === enabledTypeFilters[0];
+                } else if (enabledTypeFilters.length === 2) {
+                    // If two types are selected, check if the Pokémon has both types
+                    matchesType = (type1 === enabledTypeFilters[0] && type2 === enabledTypeFilters[1]) ||
+                                (type1 === enabledTypeFilters[1] && type2 === enabledTypeFilters[0]);
+                }
+            }
+
+            if (abilityQuery) {
+            matchesAbility = (ability1?.toLowerCase() === abilityQuery.toLowerCase()) ||
+                             (ability2?.toLowerCase() === abilityQuery.toLowerCase()) ||
+                             (ability3?.toLowerCase() === abilityQuery.toLowerCase()) ||
+                             (ability4?.toLowerCase() === abilityQuery.toLowerCase()) ||
+                             (ability5?.toLowerCase() === abilityQuery.toLowerCase()) ||
+                             (ability6?.toLowerCase() === abilityQuery.toLowerCase());
+            }   
+
+            if (matchesName && matchesType && matchesAbility) {
+                (item as HTMLElement).style.display = 'inherit';
+            } else {
+                (item as HTMLElement).style.display = 'none';
+            }
+        }
+    }
+
+    // Debounce function - Smoothes a bit the repopulation when filter is removed
+    function debounce(func: any, delay: any) {
+        let debounceTimer: number | undefined;
+        return function(this: any) {
+            const context = this;
+            const args = arguments;
+            clearTimeout(debounceTimer);
+            debounceTimer = setTimeout(() => func.apply(context, args), delay);
+        }
+    }
+
+    nameSearchInput && nameSearchInput.addEventListener('input', debounce(filterPokemon, 300));
+    abilityInput.addEventListener('input', debounce(filterPokemon, 300));
+
+    let enabledCount = 0;
+    document.querySelectorAll('.type-filter').forEach(div => {
+        div.addEventListener('click', function (this: HTMLElement, event: Event) {
+        if (this.classList.contains('filter-type-enabled')) {
+            this.classList.toggle('grayscale');
+            this.classList.toggle('opacity-50');
+            this.classList.toggle('filter-type-enabled');
+            enabledCount--;
+        } else if (enabledCount < 2) {
+            this.classList.toggle('grayscale');
+            this.classList.toggle('opacity-50');
+            this.classList.toggle('filter-type-enabled');
+            enabledCount++;
+        }
+        filterPokemon();
+        });
+    });
+</script>

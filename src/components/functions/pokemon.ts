@@ -1,6 +1,4 @@
-import BasicData from '../../assets/data/basic_data.json';
-import AltNames from '../../assets/data/alt_names.json';
-import PkmnAbility from '../../assets/data/pkmn_ability.json';
+import BasicData from '../../assets/data/pokemons.json';
 import DexFileInfo from '../../assets/data/dex_info_compressed.json';
 import HelpLists from '../../assets/data/basic_dexinfo_match_help.json';
 
@@ -12,22 +10,6 @@ export function listPkmn() {
 // Returns a single pokemon data
 export function getPkmn(name: string) {
     return BasicData.find(p => p["Species Name"].toLowerCase() === name.toLowerCase());
-}
-
-// Returns its alternative name, if there is one
-export function getAltName(name: string) {
-    let n = name.toLowerCase();
-    let res = AltNames.find(data => data["Canonical Name"]?.toLowerCase() === n);
-    if(res) {
-        return res["Readable name"]
-    } else {
-        return name
-    }
-}
-
-// Returns the pokemon abilities
-export function getPkmnAbilities(name: string) {
-     return PkmnAbility.find((item: any) => item.name.toLowerCase() === name.toLowerCase()) ?? {};
 }
 
 // Returns the dex data of a pokemon, searching with the google sheets names
@@ -65,7 +47,15 @@ export function getPkmnDexInfo(name: string) {
             }
         }
     }
-    let data = DexFileInfo.find((p:any) => p.name.toLowerCase() === name.toLowerCase()) ?? {move:{lv:0}};
+    let data = DexFileInfo.find((p:any) => p.name.toLowerCase() === name.toLowerCase()) ?? {
+        move:{
+            lv:[],
+            other:[],
+            linked:[],
+            core:[]
+        },
+        newEvo:[]
+    };
 
     return data;
 }

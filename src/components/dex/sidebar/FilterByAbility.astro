@@ -1,0 +1,18 @@
+---
+import { listAbilities } from '../../functions/ability.ts';
+---
+<div id="typeFilters" class="flex flex-wrap gap-2 mt-[5px]">
+    <input 
+        id="abilityInput" 
+        type="text" 
+        class="w-full input transition-all duration-300 ease-in-out
+        hover:outline-0 hover:border-pkb-red
+        focus:outline-0 focus:border-pkb-red" 
+        placeholder="Static" 
+        list="abilities" />
+    <datalist id="abilities">
+        { listAbilities().map( (ability: any) => (
+            <option value={ability.Name}>{ability.Name}</option>
+        ) ) }
+    </datalist>
+</div>

@@ -1,11 +1,11 @@
-import AbilityData from '../../assets/data/ability_data.json';
+import Abilities from '../../assets/data/abilities.json';
 
 export function listAbilities() {
-    return AbilityData
+    return Abilities
 }
  
 export function getAbility(name: string) {
-    return AbilityData.find((item:any) => item.Name.toLowerCase() === name.toLowerCase());
+    return Abilities.find((item:any) => item.Name.toLowerCase() === name.toLowerCase());
 }
 
 export function getAbilityEffect(data: any) {

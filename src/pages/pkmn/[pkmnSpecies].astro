@@ -3,6 +3,7 @@ import Layout from "../../layouts/Layout.astro";
 
 import SpeciesHeader from "../../components/dex/species/SpeciesHeader.astro";
 import SpeciesImage from "../../components/dex/species/SpeciesImage.astro";
+import TypeDefensesTable from "../../components/dex/species/TypeDefensesTable.astro";
 import StatTable from "../../components/dex/species/StatTable.astro";
 import EvolutionLine from "../../components/dex/species/evolution/EvolutionLine.astro";
 import AbilityList from "../../components/dex/species/ability/AbilityList.astro";
@@ -52,39 +53,76 @@ if(isMew) {
 
 ---
 <Layout>    
-    <div class="m-[20px] flex flex-wrap gap-2">
-        <div id="header" class="w-full flex flex-wrap gap-2">
+    <div class="p-[10px] flex flex-wrap gap-2">
+        <div id="header" class="w-full flex flex-wrap gap-2">           
             <div class="card bg-base-200 text-neutral-content border-base-300 rounded-box border">
                 <div class="card-body p-[15px] grid grid-col-4">
                     <a href="/hyaku-dex"><button class="btn btn-outline border-2 border-pkb-red hover:bg-pkb-red">Back to dex</button></a>     
                 </div>
             </div>
             <SpeciesHeader pkmn={ pkmn }/>
-        </div>
-        <div class="flex gap-2 flex-wrap">    
+        </div>        
+        <div class="flex flex-wrap gap-2">
             <div class="flex flex-col gap-2 w-full md:w-[350px]">
                 <SpeciesImage pkmn={ pkmn } />      
                 <StatTable pkmn={pkmn} /> 
-                <EvolutionLine pkmn={pkmn} />
-            </div>   
-            <div class="flex flex-col gap-2 w-full md:w-auto">
-                <AbilityList pkmn={pkmn} />
                 <OtherInfo pkmn={pkmn} />
             </div>
-            <div class="flex flex-col gap-2 w-full md:w-auto">     
-                <SkillList pkmn={pkmn} />       
-                <CapabilitiesList pkmn={pkmn} />
-            </div>
-            <div class="flex flex-col gap-2 w-full md:w-auto">
-                <MoveListTable title="Move list" pkmn={pkmn} enableLvCol={true} moves={ moves.lv } />
-                {isHoopa && 
-                <MoveListTable title="Linked move list" pkmn={pkmn} moves={ moves.linked } />}    
-                {isZygarde &&                 
-                <MoveListTable title="Zygarde Core move list" pkmn={pkmn} moves={ moves.core } />}       
-            </div>
-            <div class="flex flex-col gap-2 w-full md:w-auto">
-                <MoveListTable title="TM/Tutor list" pkmn={pkmn} moves={otherMoveList} enableNatCol={true} enablePagination={true} />
-            </div>
+            <div class="flex-1">
+                <div class="card flex-1 bg-base-200 text-neutral-content border-base-300 rounded-box border">
+                    <div class="card-body p-[15px]">                    
+                        <div class="tabs tabs-border min-h-max">
+                            <input type="radio" name="pkmn_data_tabs" class="tab" aria-label="Abilities & defenses" checked="checked" />
+                            <div class="tab-content bg-base-100 border-base-300 p-2">                                 
+                                <div class="flex flex-wrap gap-2">
+                                    <div class="w-full md:w-auto">
+                                        <TypeDefensesTable pkmn={ pkmn }/>
+                                    </div>
+                                    <div class="w-full md:w-auto">
+                                        <AbilityList pkmn={pkmn} />
+                                    </div>
+                                </div>
+                            </div>
+
+                            <input type="radio" name="pkmn_data_tabs" class="tab" aria-label="Evolutions" />
+                            <div class="tab-content bg-base-100 border-base-300 p-2">                    
+                                    <EvolutionLine pkmn={pkmn} />
+                            </div>
+
+                            <input type="radio" name="pkmn_data_tabs" class="tab" aria-label="Skills & Capabilities" />
+                            <div class="tab-content bg-base-100 border-base-300 p-2">                   
+                                <div class="flex gap-2 flex-wrap">   
+                                    <div class="flex flex-1 flex-col gap-2 w-full md:w-auto">     
+                                        <SkillList pkmn={pkmn} />                                   
+                                    </div> 
+                                    <div class="flex flex-1 flex-col gap-2 w-full md:w-auto">
+                                        <CapabilitiesList pkmn={pkmn} />
+                                    </div>
+                                </div>
+                            </div>
+
+                            <input type="radio" name="pkmn_data_tabs" class="tab" aria-label="Moves" />
+                            <div class="tab-content bg-base-100 border-base-300 p-2">
+                                <div class="flex flex-wrap gap-2 justify-start">
+                                    <div class="w-full md:flex-1">
+                                        <MoveListTable title="Move list" pkmn={pkmn} enableLvCol={true} moves={ moves.lv } />
+                                    </div>
+                                    {isHoopa && 
+                                    <div class="w-full md:flex-1">
+                                        <MoveListTable title="Linked move list" pkmn={pkmn} moves={ moves.linked } />
+                                    </div>}    
+                                    {isZygarde &&                                                 
+                                    <MoveListTable title="Zygarde Core move list" pkmn={pkmn} moves={ moves.core } />}
+                                    <div class="w-full md:flex-1">
+                                        <MoveListTable title="TM/Tutor list" pkmn={pkmn} moves={otherMoveList} enableNatCol={true} enablePagination={true} /> 
+                                    </div>       
+                                </div>                      
+                            </div>
+                        </div> 
+                    </div>
+                </div>   
+            </div>  
         </div>
+        
     </div>
 </Layout>

@@ -892,20 +892,20 @@
     {
       "Name": "Reckless (Red) /\nRock Head (Blue) /\nRattled (White)",
       "Frequency": "At-Will - Free Action (Rattled) / Static (Rock Head/Reckless)",
-      "Effect": "Rattled: The user's Speed is raised by +1 Combat Stage, and may immediately Disengage as a Free Action.\n\nReckless:Increases the Damage Base of Moves with the Exhaust, Recoil, or Reckless Keywords by +3.\nReckless Moves: Jump Kick, Hi Jump Kick, Close Combat, Draco Meteor, Hammer Arm, Leaf Storm, Outrage, Overheat, Petal Dance, Psycho Boost, Superpower, Thrash, and V-Create.\n\nRock Head: The user ignores the Recoil keyword when attacking. If the user moves at least 4 meters in a straight line towards a foe before attacking that foe with a physical attack, they may add a +2d6 Bonus to the Damage Roll against that foe.",
+      "Effect": "Rattled: The user's Speed is raised by +1 Combat Stage, and may immediately Disengage as a Free Action.\n\nReckless:Increases the Damage Base of Moves with the Exhaust, Recoil, or Reckless Keywords by +3.\nReckless Moves: Jump Kick, High Jump Kick, Close Combat, Draco Meteor, Hammer Arm, Leaf Storm, Outrage, Overheat, Petal Dance, Psycho Boost, Superpower, Thrash, and V-Create.\n\nRock Head: The user ignores the Recoil keyword when attacking. If the user moves at least 4 meters in a straight line towards a foe before attacking that foe with a physical attack, they may add a +2d6 Bonus to the Damage Roll against that foe.",
       "Trigger": "Rattled: The user is hit by a Bug, Dark, or Ghost Type Move",
       "Target": "",
       "Keywords": "2-16 Errata",
-      "Effect 2": "Rattled: The user's Speed is raised by +1 Combat Stage, and may immediately Disengage as a Free Action.\n\nReckless:Increases the Damage Base of Moves with the Exhaust, Recoil, or Reckless Keywords by +3.\nReckless Moves: Jump Kick, Hi Jump Kick, Close Combat, Draco Meteor, Hammer Arm, Leaf Storm, Outrage, Overheat, Petal Dance, Psycho Boost, Superpower, Thrash, and V-Create.\n\nRock Head: The user ignores the Recoil keyword when attacking. If the user moves at least 4 meters in a straight line towards a foe before attacking that foe with a physical attack, they may add a +2d6 Bonus to the Damage Roll against that foe."
+      "Effect 2": "Rattled: The user's Speed is raised by +1 Combat Stage, and may immediately Disengage as a Free Action.\n\nReckless:Increases the Damage Base of Moves with the Exhaust, Recoil, or Reckless Keywords by +3.\nReckless Moves: Jump Kick, High Jump Kick, Close Combat, Draco Meteor, Hammer Arm, Leaf Storm, Outrage, Overheat, Petal Dance, Psycho Boost, Superpower, Thrash, and V-Create.\n\nRock Head: The user ignores the Recoil keyword when attacking. If the user moves at least 4 meters in a straight line towards a foe before attacking that foe with a physical attack, they may add a +2d6 Bonus to the Damage Roll against that foe."
     },
     {
       "Name": "Reckless",
       "Frequency": "Static",
-      "Effect": "Increases the Damage Base of Moves with the Exhaust, Recoil, or Reckless Keywords by +3.\nReckless Moves: Jump Kick, Hi Jump Kick, Close Combat, Draco Meteor, Hammer Arm, Leaf Storm, Outrage, Overheat, Petal Dance, Psycho Boost, Superpower, Thrash, and V-Create.",
+      "Effect": "Increases the Damage Base of Moves with the Exhaust, Recoil, or Reckless Keywords by +3.\nReckless Moves: Jump Kick, High Jump Kick, Close Combat, Draco Meteor, Hammer Arm, Leaf Storm, Outrage, Overheat, Petal Dance, Psycho Boost, Superpower, Thrash, and V-Create.",
       "Trigger": "",
       "Target": "",
       "Keywords": "2-16 Errata",
-      "Effect 2": "Keywords - 2-16 Errata\nIncreases the Damage Base of Moves with the Exhaust, Recoil, or Reckless Keywords by +3.\nReckless Moves: Jump Kick, Hi Jump Kick, Close Combat, Draco Meteor, Hammer Arm, Leaf Storm, Outrage, Overheat, Petal Dance, Psycho Boost, Superpower, Thrash, and V-Create."
+      "Effect 2": "Keywords - 2-16 Errata\nIncreases the Damage Base of Moves with the Exhaust, Recoil, or Reckless Keywords by +3.\nReckless Moves: Jump Kick, High Jump Kick, Close Combat, Draco Meteor, Hammer Arm, Leaf Storm, Outrage, Overheat, Petal Dance, Psycho Boost, Superpower, Thrash, and V-Create."
     },
     {
       "Name": "Regal Challenge",

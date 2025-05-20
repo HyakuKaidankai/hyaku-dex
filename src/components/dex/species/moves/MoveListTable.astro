@@ -7,14 +7,14 @@ import { getMove } from '../../../functions/move.ts';
 const { pkmn, title, moves=[], enableLvCol=false, enableNatCol=false, enablePagination=false} = Astro.props;
 
 const prefix = title.replaceAll(" ", "").replaceAll("/","").replaceAll("-","")
-const movesPerPage = 28
+const movesPerPage = 20
 const numberOfPages = Math.ceil(moves.length / movesPerPage)
 const pagesMap = [...Array(numberOfPages).keys()]
 ---
 
 <div class="card bg-base-200 text-neutral-content border-base-300 rounded-box border">
     <div class="card-body p-[15px]">
-        <p class="px-4 pb-2 text-xs opacity-60 tracking-wide">{title}</p>
+        <p class="flex-0 px-4 pb-2 text-xs opacity-60 tracking-wide">{title}</p>
         <div class="overflow-x-auto">
             <table class="table table-xs">
                 <thead>

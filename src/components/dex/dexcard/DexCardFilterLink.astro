@@ -1,21 +1,19 @@
 ---
-import { getAltName, getPkmnAbilities } from '../../functions/pokemon.ts';
-
 const { pkmn } = Astro.props;
 
-const abilities = getPkmnAbilities(pkmn["Species Name"]);
+const pkmnName = pkmn.display_name ? pkmn.display_name : pkmn["Species Name"]
 
 ---
 <a class="pkmn-container" href={`/hyaku-dex/pkmn/${pkmn["Species Name"]}`}
 data-name={pkmn["Species Name"]} 
-data-alt-name={getAltName(pkmn["Species Name"])}
+data-alt-name={pkmnName}
 data-t1={pkmn["Type1"]} 
 data-t2={pkmn["Type2"]}
-data-ab1={abilities["ability1"]}
-data-ab2={abilities["ability2"]}
-data-ab3={abilities["ability3"]}
-data-ab4={abilities["ability4"]}
-data-ab5={abilities["ability5"]}
-data-ab6={abilities["ability6"]}>
+data-ab1={pkmn.abilities[0]["name"]}
+data-ab2={pkmn.abilities[1]["name"]}
+data-ab3={pkmn.abilities[2]["name"]}
+data-ab4={pkmn.abilities[3]["name"]}
+data-ab5={pkmn.abilities[4]["name"]}
+data-ab6={pkmn.abilities[5]["name"]}>
     <slot />
 </a>
