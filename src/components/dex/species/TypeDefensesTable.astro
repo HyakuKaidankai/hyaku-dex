@@ -32,8 +32,8 @@ groupedTypesArray.sort((a, b) => b.value - a.value);
     <div class="flex flex-wrap gap-2 justify-center justify-items-center">
       {groupedTypesArray.map((group) => (
         <div class="w-full">
-          <div class="font-bold text-xl text-center tabular-nums mb-2">Takes {group.value}x from</div>
-          <div class="flex flex-wrap gap-2 justify-center">
+          <div class="font-bold text-xl tabular-nums mb-2">Takes {group.value}x from</div>
+          <div class="flex flex-wrap gap-2 justify-left">
             {group.types.map((type) => (
               <div class="w-[105px]">
                 <TypeBadge typeName={type} textSize="xs" height="26px" logoWidth={16} logoHeight={16} fontWeight="semibold" />

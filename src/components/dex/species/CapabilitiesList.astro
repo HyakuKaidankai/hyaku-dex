@@ -7,15 +7,14 @@ let movement_capabilities = ["Overland", "Sky", "Swim", "Levitate", "Burrow", "H
 <div class="card bg-base-200 text-neutral-content border-base-300 rounded-box border">
     <div class="card-body p-[15px]">
         <p class="px-4 pb-2 text-xs opacity-60 tracking-wide">Movement capabilities</p>
-        <div class="grid grid-cols-4 gap-2">
-                {movement_capabilities.map( (capability:any) => (
-                    <div class="card bg-base-100 border border-base-300 p-[5px]">                    
+        <div class="flex flex-wrap gap-2 justify-evenly">
+            {movement_capabilities.map( (capability:any) => (
+                    <div class="card bg-base-100 border border-base-300 p-[5px] w-[75px]">                    
                         <div class="font-base text-xs text-center mb-[2px]">{capability}</div>
                         <div class="font-thin text-xs text-center opacity-80 tabular-nums">{pkmn[capability]}</div>
                     </div>
-                ))}            
-            </div>    
-        </div>          
+                ))} 
+        </div>              
     </div>
 </div>
 <div class="card bg-base-200 text-neutral-content border-base-300 rounded-box border">

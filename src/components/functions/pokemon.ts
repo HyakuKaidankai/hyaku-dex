@@ -54,7 +54,7 @@ export function getPkmnDexInfo(name: string) {
             linked:[],
             core:[]
         },
-        newEvo:[]
+        evo:[]
     };
 
     return data;

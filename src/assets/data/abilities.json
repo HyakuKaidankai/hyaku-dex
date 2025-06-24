@@ -47,20 +47,20 @@
     {
       "Name": "Arena Trap",
       "Frequency": "Scene - Free Action",
-      "Effect": "Once Arena Trap is activated, all foes within 5 meters of the user are considered Slowed and Trapped. This does not affect targets of the Flying Type, or with a Levitate, Sky, or Burrow Speed of 4 or higher. The user may end the effect as a Free Action, and the effect ends if the user is Fainted or returned to a PokÃ© Ball.",
+      "Effect": "Once Arena Trap is activated, all foes within 5 meters of the user are considered Slowed and Trapped. This does not affect targets of the Flying Type, or with a Levitate, Sky, or Burrow Speed of 4 or higher. The user may end the effect as a Free Action, and the effect ends if the user is Fainted or returned to a Poké Ball.",
       "Trigger": "",
-      "Target": "PokÃ©mon or Trainers",
+      "Target": "Pokémon or Trainers",
       "Keywords": "2-16 Errata",
-      "Effect 2": "Keywords - 2-16 Errata\nTarget - PokÃ©mon or Trainers\nOnce Arena Trap is activated, all foes within 5 meters of the user are considered Slowed and Trapped. This does not affect targets of the Flying Type, or with a Levitate, Sky, or Burrow Speed of 4 or higher. The user may end the effect as a Free Action, and the effect ends if the user is Fainted or returned to a PokÃ© Ball."
+      "Effect 2": "Keywords - 2-16 Errata\nTarget - Pokémon or Trainers\nOnce Arena Trap is activated, all foes within 5 meters of the user are considered Slowed and Trapped. This does not affect targets of the Flying Type, or with a Levitate, Sky, or Burrow Speed of 4 or higher. The user may end the effect as a Free Action, and the effect ends if the user is Fainted or returned to a Poké Ball."
     },
     {
       "Name": "Aroma Veil",
       "Frequency": "Static",
-      "Effect": "The user and all adjacent PokÃ©mon and Trainers cannot become Confused, Enraged, or Suppressed. Defensive.",
+      "Effect": "The user and all adjacent Pokémon and Trainers cannot become Confused, Enraged, or Suppressed. Defensive.",
       "Trigger": "",
       "Target": "",
       "Keywords": "2-16 Errata",
-      "Effect 2": "Keywords - 2-16 Errata\nThe user and all adjacent PokÃ©mon and Trainers cannot become Confused, Enraged, or Suppressed. Defensive."
+      "Effect 2": "Keywords - 2-16 Errata\nThe user and all adjacent Pokémon and Trainers cannot become Confused, Enraged, or Suppressed. Defensive."
     },
     {
       "Name": "Aura Break",
@@ -229,9 +229,9 @@
       "Frequency": "Scene - Swift Action",
       "Effect": "The target must reveal whether its Defense or Special Defense Stats are lower. If the Defense Stat is lower, the user gains a +1 Attack CS. If the Special Defense Stat is lower, the user instead gains +1 Special Attack CS. If both are tied, the user gains +1 CS to any Stat of their choice.",
       "Trigger": "",
-      "Target": "Trainer or PokÃ©mon",
+      "Target": "Trainer or Pokémon",
       "Keywords": "2-16 Errata",
-      "Effect 2": "Keywords - 2-16 Errata\nTarget - Trainer or PokÃ©mon\nThe target must reveal whether its Defense or Special Defense Stats are lower. If the Defense Stat is lower, the user gains a +1 Attack CS. If the Special Defense Stat is lower, the user instead gains +1 Special Attack CS. If both are tied, the user gains +1 CS to any Stat of their choice."
+      "Effect 2": "Keywords - 2-16 Errata\nTarget - Trainer or Pokémon\nThe target must reveal whether its Defense or Special Defense Stats are lower. If the Defense Stat is lower, the user gains a +1 Attack CS. If the Special Defense Stat is lower, the user instead gains +1 Special Attack CS. If both are tied, the user gains +1 CS to any Stat of their choice."
     },
     {
       "Name": "Dream Smoke",
@@ -669,9 +669,9 @@
       "Frequency": "Scene x3 - Swift Action",
       "Effect": "Pick Two Effects;\n-The target is pushed or pulled X meters directly away or towards the user. X is up to 6 meters minus the target's Weight Class.\n-Until the end of the user's next turn, the target may not move more then 6 meters away from the user .\n-Until the end of the user's next turn, the target may not move closer than 3 meters to the user.",
       "Trigger": "",
-      "Target": "A Steel-Type PokÃ©mon within 6 meters",
+      "Target": "A Steel-Type Pokémon within 6 meters",
       "Keywords": "2-16 Errata",
-      "Effect 2": "Keywords - 2-16 Errata\nTarget - A Steel-Type PokÃ©mon within 6 meters\nPick Two Effects;\n-The target is pushed or pulled X meters directly away or towards the user. X is up to 6 meters minus the target's Weight Class.\n-Until the end of the user's next turn, the target may not move more then 6 meters away from the user .\n-Until the end of the user's next turn, the target may not move closer than 3 meters to the user."
+      "Effect 2": "Keywords - 2-16 Errata\nTarget - A Steel-Type Pokémon within 6 meters\nPick Two Effects;\n-The target is pushed or pulled X meters directly away or towards the user. X is up to 6 meters minus the target's Weight Class.\n-Until the end of the user's next turn, the target may not move more then 6 meters away from the user .\n-Until the end of the user's next turn, the target may not move closer than 3 meters to the user."
     },
     {
       "Name": "Mega Launcher",
@@ -912,9 +912,9 @@
       "Frequency": "Scene - Swift Action",
       "Effect": "Ask the target if they will show deference or defiance. If they choose Deference, the target loses their next Shift action and loses 3 CS in the Stat of the user's choice. If they choose Defiance, the user gains a +10 Bonus to all Damage Rolls for the rest of the Scene.",
       "Trigger": "",
-      "Target": "PokÃ©mon or Trainer within 5 Meters",
+      "Target": "Pokémon or Trainer within 5 Meters",
       "Keywords": "2-16 Errata",
-      "Effect 2": "Keywords - 2-16 Errata\nTarget - PokÃ©mon or Trainer within 5 Meters\nAsk the target if they will show deference or defiance. If they choose Deference, the target loses their next Shift action and loses 3 CS in the Stat of the user's choice. If they choose Defiance, the user gains a +10 Bonus to all Damage Rolls for the rest of the Scene."
+      "Effect 2": "Keywords - 2-16 Errata\nTarget - Pokémon or Trainer within 5 Meters\nAsk the target if they will show deference or defiance. If they choose Deference, the target loses their next Shift action and loses 3 CS in the Stat of the user's choice. If they choose Defiance, the user gains a +10 Bonus to all Damage Rolls for the rest of the Scene."
     },
     {
       "Name": "Rock Head",
@@ -1243,11 +1243,11 @@
     {
       "Name": "Stench",
       "Frequency": "Static",
-      "Effect": "The PokÃ©mon's Moves Flinch Targets on a roll of 18+. If a move already has a chance of Flinching foes, the Effect Range is increased by +3 instead. Whenever the user Flinches a foe with an attack, that foe gains a -2 penalty to Accuracy Rolls for 1 full round.",
+      "Effect": "The Pokémon's Moves Flinch Targets on a roll of 18+. If a move already has a chance of Flinching foes, the Effect Range is increased by +3 instead. Whenever the user Flinches a foe with an attack, that foe gains a -2 penalty to Accuracy Rolls for 1 full round.",
       "Trigger": "",
       "Target": "",
       "Keywords": "2-16 Errata",
-      "Effect 2": "Keywords - 2-16 Errata\nThe PokÃ©mon's Moves Flinch Targets on a roll of 18+. If a move already has a chance of Flinching foes, the Effect Range is increased by +3 instead. Whenever the user Flinches a foe with an attack, that foe gains a -2 penalty to Accuracy Rolls for 1 full round."
+      "Effect 2": "Keywords - 2-16 Errata\nThe Pokémon's Moves Flinch Targets on a roll of 18+. If a move already has a chance of Flinching foes, the Effect Range is increased by +3 instead. Whenever the user Flinches a foe with an attack, that foe gains a -2 penalty to Accuracy Rolls for 1 full round."
     },
     {
       "Name": "Storm Drain",
@@ -1369,11 +1369,11 @@
     {
       "Name": "Transporter",
       "Frequency": "Daily x3 - Free Action",
-      "Effect": "Connection - Teleport. You activate Teleporter as if your Teleporter value were three times its normal value; or you may take one willing adjacent PokÃ©mon or Trainer along with you as you teleport so long as you are touching them when you activate Transporter. You may expend two uses of Transporter at once to choose both effects",
+      "Effect": "Connection - Teleport. You activate Teleporter as if your Teleporter value were three times its normal value; or you may take one willing adjacent Pokémon or Trainer along with you as you teleport so long as you are touching them when you activate Transporter. You may expend two uses of Transporter at once to choose both effects",
       "Trigger": "You Teleport",
       "Target": "",
       "Keywords": "2-16 Errata",
-      "Effect 2": "Keywords - 2-16 Errata\nTrigger - You Teleport\nConnection - Teleport. You activate Teleporter as if your Teleporter value were three times its normal value; or you may take one willing adjacent PokÃ©mon or Trainer along with you as you teleport so long as you are touching them when you activate Transporter. You may expend two uses of Transporter at once to choose both effects"
+      "Effect 2": "Keywords - 2-16 Errata\nTrigger - You Teleport\nConnection - Teleport. You activate Teleporter as if your Teleporter value were three times its normal value; or you may take one willing adjacent Pokémon or Trainer along with you as you teleport so long as you are touching them when you activate Transporter. You may expend two uses of Transporter at once to choose both effects"
     },
     {
       "Name": "Trinity",
@@ -1475,11 +1475,11 @@
     {
       "Name": "Sequence",
       "Frequency": "At-Will - Free Action",
-      "Effect": "For every allied Electric-Type PokÃ©mon adjacent to the user, the triggering Attack deals an additional +3 Damage.",
+      "Effect": "For every allied Electric-Type Pokémon adjacent to the user, the triggering Attack deals an additional +3 Damage.",
       "Trigger": "The user uses an Electric Attack",
       "Target": "",
       "Keywords": "9-15 Errata",
-      "Effect 2": "Keywords - 9-15 Errata\nTrigger - The user uses an Electric Attack\nFor every allied Electric-Type PokÃ©mon adjacent to the user, the triggering Attack deals an additional +3 Damage."
+      "Effect 2": "Keywords - 9-15 Errata\nTrigger - The user uses an Electric Attack\nFor every allied Electric-Type Pokémon adjacent to the user, the triggering Attack deals an additional +3 Damage."
     },
     {
       "Name": "Type Strategist",
@@ -1727,47 +1727,47 @@
     {
       "Name": "Air Lock",
       "Frequency": "Scene - Free Action",
-      "Effect": "The weather is set to Normal as long as the PokÃ©mon with Air Lock wants it to remain that way. The user may continue to sustain this effect as a Swift Action each round.",
+      "Effect": "The weather is set to Normal as long as the Pokémon with Air Lock wants it to remain that way. The user may continue to sustain this effect as a Swift Action each round.",
       "Trigger": "",
       "Target": "",
       "Keywords": "",
-      "Effect 2": "The weather is set to Normal as long as the PokÃ©mon with Air Lock wants it to remain that way. The user may continue to sustain this effect as a Swift Action each round."
+      "Effect 2": "The weather is set to Normal as long as the Pokémon with Air Lock wants it to remain that way. The user may continue to sustain this effect as a Swift Action each round."
     },
     {
       "Name": "Analytic",
       "Frequency": "Static",
-      "Effect": "Whenever the user targets uses a damaging Move on a PokÃ©mon or Trainer that have acted before it during Initiative this Round, that Move deals an additional +5 Damage.",
+      "Effect": "Whenever the user targets uses a damaging Move on a Pokémon or Trainer that have acted before it during Initiative this Round, that Move deals an additional +5 Damage.",
       "Trigger": "",
       "Target": "",
       "Keywords": "",
-      "Effect 2": "Whenever the user targets uses a damaging Move on a PokÃ©mon or Trainer that have acted before it during Initiative this Round, that Move deals an additional +5 Damage."
+      "Effect 2": "Whenever the user targets uses a damaging Move on a Pokémon or Trainer that have acted before it during Initiative this Round, that Move deals an additional +5 Damage."
     },
     {
       "Name": "Anger Point",
       "Frequency": "At-Will - Free Action",
-      "Effect": "When the PokÃ©mon receives a Critical Hit, they become Enraged and gain +6 Attack Combat Stages.",
+      "Effect": "When the Pokémon receives a Critical Hit, they become Enraged and gain +6 Attack Combat Stages.",
       "Trigger": "",
       "Target": "",
       "Keywords": "",
-      "Effect 2": "When the PokÃ©mon receives a Critical Hit, they become Enraged and gain +6 Attack Combat Stages."
+      "Effect 2": "When the Pokémon receives a Critical Hit, they become Enraged and gain +6 Attack Combat Stages."
     },
     {
       "Name": "Anticipation",
       "Frequency": "At-Will - Swift Action",
-      "Effect": "The target reveals if they have any Moves that are Super-Effective against the PokÃ©mon with Anticipation. You may not target a PokÃ©mon or Trainer more than once per encounter with Anticipation. Anticipation only reveals whether the opponent does or does not have those moves, not the specific moves themselves.",
+      "Effect": "The target reveals if they have any Moves that are Super-Effective against the Pokémon with Anticipation. You may not target a Pokémon or Trainer more than once per encounter with Anticipation. Anticipation only reveals whether the opponent does or does not have those moves, not the specific moves themselves.",
       "Trigger": "",
-      "Target": "PokÃ©mon or Trainers",
+      "Target": "Pokémon or Trainers",
       "Keywords": "",
-      "Effect 2": "Target - PokÃ©mon or Trainers\nThe target reveals if they have any Moves that are Super-Effective against the PokÃ©mon with Anticipation. You may not target a PokÃ©mon or Trainer more than once per encounter with Anticipation. Anticipation only reveals whether the opponent does or does not have those moves, not the specific moves themselves."
+      "Effect 2": "Target - Pokémon or Trainers\nThe target reveals if they have any Moves that are Super-Effective against the Pokémon with Anticipation. You may not target a Pokémon or Trainer more than once per encounter with Anticipation. Anticipation only reveals whether the opponent does or does not have those moves, not the specific moves themselves."
     },
     {
       "Name": "Ball Fetch",
       "Frequency": "Scene - Free Action, Reaction",
-      "Effect": "The user may move up to their speed as a Free Action. They must end this movement closer to the triggering PokÃ©mon.",
-      "Trigger": "A PokÃ©mon is Released onto the battlefield",
+      "Effect": "The user may move up to their speed as a Free Action. They must end this movement closer to the triggering Pokémon.",
+      "Trigger": "A Pokémon is Released onto the battlefield",
       "Target": "",
       "Keywords": "",
-      "Effect 2": "Trigger - A PokÃ©mon is Released onto the battlefield\nThe user may move up to their speed as a Free Action. They must end this movement closer to the triggering PokÃ©mon."
+      "Effect 2": "Trigger - A Pokémon is Released onto the battlefield\nThe user may move up to their speed as a Free Action. They must end this movement closer to the triggering Pokémon."
     },
     {
       "Name": "Battery",
@@ -2024,11 +2024,11 @@
     {
       "Name": "Cotton Down",
       "Frequency": "Scene - Free Action, Reaction",
-      "Effect": "All PokÃ©mon in a Burst 1 around the user have their speed lowered by 1 CS, and are Slowed for one full round.",
+      "Effect": "All Pokémon in a Burst 1 around the user have their speed lowered by 1 CS, and are Slowed for one full round.",
       "Trigger": "The user is hit by an attack",
       "Target": "",
       "Keywords": "",
-      "Effect 2": "Trigger - The user is hit by an attack\nAll PokÃ©mon in a Burst 1 around the user have their speed lowered by 1 CS, and are Slowed for one full round."
+      "Effect 2": "Trigger - The user is hit by an attack\nAll Pokémon in a Burst 1 around the user have their speed lowered by 1 CS, and are Slowed for one full round."
     },
     {
       "Name": "Courage",
@@ -2132,11 +2132,11 @@
     {
       "Name": "Deep Sleep",
       "Frequency": "Static",
-      "Effect": "When asleep, this PokÃ©mon restores a Tick of Hit Points at the end of each turn.",
+      "Effect": "When asleep, this Pokémon restores a Tick of Hit Points at the end of each turn.",
       "Trigger": "",
       "Target": "",
       "Keywords": "",
-      "Effect 2": "When asleep, this PokÃ©mon restores a Tick of Hit Points at the end of each turn."
+      "Effect 2": "When asleep, this Pokémon restores a Tick of Hit Points at the end of each turn."
     },
     {
       "Name": "Defiant",
@@ -2168,11 +2168,11 @@
     {
       "Name": "Dig Away",
       "Frequency": "Daily - Free Action",
-      "Effect": "Connection - Dig. When hit by a Move, this PokÃ©mon may activate this Feature to use Dig, frequency allowing, as an interrupt to avoid the attack and shift underground immediately. This consumes a command as normal. The terrain must allow for Dig to be used.",
+      "Effect": "Connection - Dig. When hit by a Move, this Pokémon may activate this Feature to use Dig, frequency allowing, as an interrupt to avoid the attack and shift underground immediately. This consumes a command as normal. The terrain must allow for Dig to be used.",
       "Trigger": "",
       "Target": "",
       "Keywords": "",
-      "Effect 2": "Connection - Dig. When hit by a Move, this PokÃ©mon may activate this Feature to use Dig, frequency allowing, as an interrupt to avoid the attack and shift underground immediately. This consumes a command as normal. The terrain must allow for Dig to be used."
+      "Effect 2": "Connection - Dig. When hit by a Move, this Pokémon may activate this Feature to use Dig, frequency allowing, as an interrupt to avoid the attack and shift underground immediately. This consumes a command as normal. The terrain must allow for Dig to be used."
     },
     {
       "Name": "Dire Spore",
@@ -2267,11 +2267,11 @@
     {
       "Name": "Enfeebling Lips",
       "Frequency": "Static",
-      "Effect": "Connection - Lovely Kiss. Whenever the user uses the Move \"Lovely Kiss\", they may choose a stat. If the Move successfully hits, the PokÃ©mon or Trainer being targeted loses 2 combat stages in that stat.",
+      "Effect": "Connection - Lovely Kiss. Whenever the user uses the Move \"Lovely Kiss\", they may choose a stat. If the Move successfully hits, the Pokémon or Trainer being targeted loses 2 combat stages in that stat.",
       "Trigger": "",
       "Target": "",
       "Keywords": "",
-      "Effect 2": "Connection - Lovely Kiss. Whenever the user uses the Move \"Lovely Kiss\", they may choose a stat. If the Move successfully hits, the PokÃ©mon or Trainer being targeted loses 2 combat stages in that stat."
+      "Effect 2": "Connection - Lovely Kiss. Whenever the user uses the Move \"Lovely Kiss\", they may choose a stat. If the Move successfully hits, the Pokémon or Trainer being targeted loses 2 combat stages in that stat."
     },
     {
       "Name": "Exploit",
@@ -2375,11 +2375,11 @@
     {
       "Name": "Flying Fly Trap",
       "Frequency": "Static",
-      "Effect": "The PokÃ©mon takes no damage from Ground Type Moves and Bug Type Moves. Defensive.",
+      "Effect": "The Pokémon takes no damage from Ground Type Moves and Bug Type Moves. Defensive.",
       "Trigger": "",
       "Target": "",
       "Keywords": "",
-      "Effect 2": "The PokÃ©mon takes no damage from Ground Type Moves and Bug Type Moves. Defensive."
+      "Effect 2": "The Pokémon takes no damage from Ground Type Moves and Bug Type Moves. Defensive."
     },
     {
       "Name": "Forecast",
@@ -2395,9 +2395,9 @@
       "Frequency": "Scene - Free Action",
       "Effect": "The Move with the highest Damage Dice Roll known by the targeted foe is revealed. If there is a tie, all tied Moves are revealed. The Moves revealed gain a -2 Penalty during Accuracy Checks when used by the target for the rest of the encounter.",
       "Trigger": "",
-      "Target": "A PokÃ©mon or Trainer",
+      "Target": "A Pokémon or Trainer",
       "Keywords": "",
-      "Effect 2": "Target - A PokÃ©mon or Trainer\nThe Move with the highest Damage Dice Roll known by the targeted foe is revealed. If there is a tie, all tied Moves are revealed. The Moves revealed gain a -2 Penalty during Accuracy Checks when used by the target for the rest of the encounter."
+      "Effect 2": "Target - A Pokémon or Trainer\nThe Move with the highest Damage Dice Roll known by the targeted foe is revealed. If there is a tie, all tied Moves are revealed. The Moves revealed gain a -2 Penalty during Accuracy Checks when used by the target for the rest of the encounter."
     },
     {
       "Name": "Friend Guard",
@@ -2537,20 +2537,20 @@
     {
       "Name": "Hay Fever",
       "Frequency": "At-Will - Swift Action",
-      "Effect": "The user creates a Burst 2 or Close Blast 3 of allergenic pollen. All Trainers and PokÃ©mon in the burst that are not Bug, Grass, or Poison Typed lose a Tick of Hit Points. This Ability cannot be activated in Rainy Weather, Sandstorms, or if it is Hailing.",
+      "Effect": "The user creates a Burst 2 or Close Blast 3 of allergenic pollen. All Trainers and Pokémon in the burst that are not Bug, Grass, or Poison Typed lose a Tick of Hit Points. This Ability cannot be activated in Rainy Weather, Sandstorms, or if it is Hailing.",
       "Trigger": "The user uses a Status Move; or the user ends their turn while Asleep.",
       "Target": "",
       "Keywords": "",
-      "Effect 2": "Trigger - The user uses a Status Move; or the user ends their turn while Asleep.\nThe user creates a Burst 2 or Close Blast 3 of allergenic pollen. All Trainers and PokÃ©mon in the burst that are not Bug, Grass, or Poison Typed lose a Tick of Hit Points. This Ability cannot be activated in Rainy Weather, Sandstorms, or if it is Hailing."
+      "Effect 2": "Trigger - The user uses a Status Move; or the user ends their turn while Asleep.\nThe user creates a Burst 2 or Close Blast 3 of allergenic pollen. All Trainers and Pokémon in the burst that are not Bug, Grass, or Poison Typed lose a Tick of Hit Points. This Ability cannot be activated in Rainy Weather, Sandstorms, or if it is Hailing."
     },
     {
       "Name": "Healer",
       "Frequency": "Scene - Free Action",
       "Effect": "The target is cured of all Status conditions.",
       "Trigger": "",
-      "Target": "An Adjacent PokÃ©mon or Trainer",
+      "Target": "An Adjacent Pokémon or Trainer",
       "Keywords": "",
-      "Effect 2": "Target - An Adjacent PokÃ©mon or Trainer\nThe target is cured of all Status conditions."
+      "Effect 2": "Target - An Adjacent Pokémon or Trainer\nThe target is cured of all Status conditions."
     },
     {
       "Name": "Heat Mirage",
@@ -2654,11 +2654,11 @@
     {
       "Name": "Illusion",
       "Frequency": "Special",
-      "Effect": "As a Standard Action, the user may mark an object, PokÃ©mon, or Trainer. The user may have a number of targets marked equal to their Focus Rank; to mark a new target, an old mark must be forfeited. Once per round as a Free Action, the user may use illusory powers to make itself look exactly like a marked target. This may be done as the user is being released from a PokÃ© Ball. This change is aesthetic and does not affect typing or Moves. The illusion allows the user to vaguely mimic sounds made by its marked target, but it is not capable of intelligible speech. Whenever the user is hit by a damaging Move, the Illusion is destroyed. The user may also dismiss the Illusion as a Free Action.",
+      "Effect": "As a Standard Action, the user may mark an object, Pokémon, or Trainer. The user may have a number of targets marked equal to their Focus Rank; to mark a new target, an old mark must be forfeited. Once per round as a Free Action, the user may use illusory powers to make itself look exactly like a marked target. This may be done as the user is being released from a Poké Ball. This change is aesthetic and does not affect typing or Moves. The illusion allows the user to vaguely mimic sounds made by its marked target, but it is not capable of intelligible speech. Whenever the user is hit by a damaging Move, the Illusion is destroyed. The user may also dismiss the Illusion as a Free Action.",
       "Trigger": "",
       "Target": "",
       "Keywords": "",
-      "Effect 2": "As a Standard Action, the user may mark an object, PokÃ©mon, or Trainer. The user may have a number of targets marked equal to their Focus Rank; to mark a new target, an old mark must be forfeited. Once per round as a Free Action, the user may use illusory powers to make itself look exactly like a marked target. This may be done as the user is being released from a PokÃ© Ball. This change is aesthetic and does not affect typing or Moves. The illusion allows the user to vaguely mimic sounds made by its marked target, but it is not capable of intelligible speech. Whenever the user is hit by a damaging Move, the Illusion is destroyed. The user may also dismiss the Illusion as a Free Action."
+      "Effect 2": "As a Standard Action, the user may mark an object, Pokémon, or Trainer. The user may have a number of targets marked equal to their Focus Rank; to mark a new target, an old mark must be forfeited. Once per round as a Free Action, the user may use illusory powers to make itself look exactly like a marked target. This may be done as the user is being released from a Poké Ball. This change is aesthetic and does not affect typing or Moves. The illusion allows the user to vaguely mimic sounds made by its marked target, but it is not capable of intelligible speech. Whenever the user is hit by a damaging Move, the Illusion is destroyed. The user may also dismiss the Illusion as a Free Action."
     },
     {
       "Name": "Immunity",
@@ -2744,11 +2744,11 @@
     {
       "Name": "Klutz",
       "Frequency": "Scene - Free Action",
-      "Effect": "Choose one of the target's Held Items or Accessory Slot Items. It is knocked to the ground.\nBonus: The PokÃ©mon ignores the effects of all held Items in its possession. The user may drop Held Items At-Will as a Free Action during their turn, even if they have Status Afflictions that prevent them from taking actions.",
+      "Effect": "Choose one of the target's Held Items or Accessory Slot Items. It is knocked to the ground.\nBonus: The Pokémon ignores the effects of all held Items in its possession. The user may drop Held Items At-Will as a Free Action during their turn, even if they have Status Afflictions that prevent them from taking actions.",
       "Trigger": "The user hits with a Melee Attack",
       "Target": "",
       "Keywords": "",
-      "Effect 2": "Trigger - The user hits with a Melee Attack\nChoose one of the target's Held Items or Accessory Slot Items. It is knocked to the ground.\nBonus: The PokÃ©mon ignores the effects of all held Items in its possession. The user may drop Held Items At-Will as a Free Action during their turn, even if they have Status Afflictions that prevent them from taking actions."
+      "Effect 2": "Trigger - The user hits with a Melee Attack\nChoose one of the target's Held Items or Accessory Slot Items. It is knocked to the ground.\nBonus: The Pokémon ignores the effects of all held Items in its possession. The user may drop Held Items At-Will as a Free Action during their turn, even if they have Status Afflictions that prevent them from taking actions."
     },
     {
       "Name": "Leek Mastery",
@@ -2762,11 +2762,11 @@
     {
       "Name": "Levitate",
       "Frequency": "Static",
-      "Effect": "The PokÃ©mon is immune to the damage and effects of Ground Type Moves, and gains a Levitate Speed of 4, or has existing Levitate Speeds increased by +2. Defensive.",
+      "Effect": "The Pokémon is immune to the damage and effects of Ground Type Moves, and gains a Levitate Speed of 4, or has existing Levitate Speeds increased by +2. Defensive.",
       "Trigger": "",
       "Target": "",
       "Keywords": "",
-      "Effect 2": "The PokÃ©mon is immune to the damage and effects of Ground Type Moves, and gains a Levitate Speed of 4, or has existing Levitate Speeds increased by +2. Defensive."
+      "Effect 2": "The Pokémon is immune to the damage and effects of Ground Type Moves, and gains a Levitate Speed of 4, or has existing Levitate Speeds increased by +2. Defensive."
     },
     {
       "Name": "Limber",
@@ -2798,11 +2798,11 @@
     {
       "Name": "Lullaby",
       "Frequency": "Scene - Free Action",
-      "Effect": "Connection - Sing. Whenever the user uses the Move \"Sing\", they may activate this Feature. The user then picks a PokÃ©mon or Trainer being targeted by Sing; Sing automatically hits that target.",
+      "Effect": "Connection - Sing. Whenever the user uses the Move \"Sing\", they may activate this Feature. The user then picks a Pokémon or Trainer being targeted by Sing; Sing automatically hits that target.",
       "Trigger": "",
       "Target": "",
       "Keywords": "",
-      "Effect 2": "Connection - Sing. Whenever the user uses the Move \"Sing\", they may activate this Feature. The user then picks a PokÃ©mon or Trainer being targeted by Sing; Sing automatically hits that target."
+      "Effect 2": "Connection - Sing. Whenever the user uses the Move \"Sing\", they may activate this Feature. The user then picks a Pokémon or Trainer being targeted by Sing; Sing automatically hits that target."
     },
     {
       "Name": "Magic Bounce",
@@ -2942,11 +2942,11 @@
     {
       "Name": "Motor Drive",
       "Frequency": "Static",
-      "Effect": "The user is immune to the damage and effects of Electric Type attacks. Whenever an Electric Type attack hits the PokÃ©mon, raise their Speed by +1 Combat Stage. Defensive.",
+      "Effect": "The user is immune to the damage and effects of Electric Type attacks. Whenever an Electric Type attack hits the Pokémon, raise their Speed by +1 Combat Stage. Defensive.",
       "Trigger": "",
       "Target": "",
       "Keywords": "",
-      "Effect 2": "The user is immune to the damage and effects of Electric Type attacks. Whenever an Electric Type attack hits the PokÃ©mon, raise their Speed by +1 Combat Stage. Defensive."
+      "Effect 2": "The user is immune to the damage and effects of Electric Type attacks. Whenever an Electric Type attack hits the Pokémon, raise their Speed by +1 Combat Stage. Defensive."
     },
     {
       "Name": "Moxie",
@@ -2987,11 +2987,11 @@
     {
       "Name": "Natural Cure",
       "Frequency": "Scene - Free Action",
-      "Effect": "Whenever the user is returned to its PokÃ© Ball or Takes A Breather, it may activate Natural Cure to cure itself of all Persistent Status Afflictions.",
+      "Effect": "Whenever the user is returned to its Poké Ball or Takes A Breather, it may activate Natural Cure to cure itself of all Persistent Status Afflictions.",
       "Trigger": "",
       "Target": "",
       "Keywords": "",
-      "Effect 2": "Whenever the user is returned to its PokÃ© Ball or Takes A Breather, it may activate Natural Cure to cure itself of all Persistent Status Afflictions."
+      "Effect 2": "Whenever the user is returned to its Poké Ball or Takes A Breather, it may activate Natural Cure to cure itself of all Persistent Status Afflictions."
     },
     {
       "Name": "Neuroforce",
@@ -3023,11 +3023,11 @@
     {
       "Name": "Omen",
       "Frequency": "Scene - Swift Action",
-      "Effect": "Choose a PokÃ©mon or Trainer within 5 meters. The target's Accuracy is lowered by 2.",
+      "Effect": "Choose a Pokémon or Trainer within 5 meters. The target's Accuracy is lowered by 2.",
       "Trigger": "",
       "Target": "",
       "Keywords": "",
-      "Effect 2": "Choose a PokÃ©mon or Trainer within 5 meters. The target's Accuracy is lowered by 2."
+      "Effect 2": "Choose a Pokémon or Trainer within 5 meters. The target's Accuracy is lowered by 2."
     },
     {
       "Name": "Overcoat",
@@ -3086,11 +3086,11 @@
     {
       "Name": "Perish Body",
       "Frequency": "Daily - Standard Action, Reaction",
-      "Effect": "The triggering creature and the user each receive a Perish Count of 3. At the beginning of each of the target's turns, their Perish count is lowered by 1. Once a Perish Count reaches 0, set the PokÃ©mon's Hit Points to 0. A Perish Count disappears if a target returns to their PokÃ© Ball, Takes a Breather, or is knocked out. Perish Body never causes Massive Damage. Defensive.",
+      "Effect": "The triggering creature and the user each receive a Perish Count of 3. At the beginning of each of the target's turns, their Perish count is lowered by 1. Once a Perish Count reaches 0, set the Pokémon's Hit Points to 0. A Perish Count disappears if a target returns to their Poké Ball, Takes a Breather, or is knocked out. Perish Body never causes Massive Damage. Defensive.",
       "Trigger": "The user is hit with a Melee attack",
       "Target": "",
       "Keywords": "",
-      "Effect 2": "Trigger - The user is hit with a Melee attack\nThe triggering creature and the user each receive a Perish Count of 3. At the beginning of each of the target's turns, their Perish count is lowered by 1. Once a Perish Count reaches 0, set the PokÃ©mon's Hit Points to 0. A Perish Count disappears if a target returns to their PokÃ© Ball, Takes a Breather, or is knocked out. Perish Body never causes Massive Damage. Defensive."
+      "Effect 2": "Trigger - The user is hit with a Melee attack\nThe triggering creature and the user each receive a Perish Count of 3. At the beginning of each of the target's turns, their Perish count is lowered by 1. Once a Perish Count reaches 0, set the Pokémon's Hit Points to 0. A Perish Count disappears if a target returns to their Poké Ball, Takes a Breather, or is knocked out. Perish Body never causes Massive Damage. Defensive."
     },
     {
       "Name": "Photosynthesis",
@@ -3149,11 +3149,11 @@
     {
       "Name": "Poison Touch",
       "Frequency": "Static",
-      "Effect": "The PokÃ©mon's Moves which deal damage Poison Legal Targets on 19+. If a move already has a chance of Poisoning foes, Poison Touch increases the effect range by +2.",
+      "Effect": "The Pokémon's Moves which deal damage Poison Legal Targets on 19+. If a move already has a chance of Poisoning foes, Poison Touch increases the effect range by +2.",
       "Trigger": "",
       "Target": "",
       "Keywords": "",
-      "Effect 2": "The PokÃ©mon's Moves which deal damage Poison Legal Targets on 19+. If a move already has a chance of Poisoning foes, Poison Touch increases the effect range by +2."
+      "Effect 2": "The Pokémon's Moves which deal damage Poison Legal Targets on 19+. If a move already has a chance of Poisoning foes, Poison Touch increases the effect range by +2."
     },
     {
       "Name": "Polycephaly",
@@ -3176,11 +3176,11 @@
     {
       "Name": "Power of Alchemy",
       "Frequency": "Scene - Free Action",
-      "Effect": "The PokÃ©mon gains an Ability known by the Target for the remainder of the encounter, or until it is Fainted.",
+      "Effect": "The Pokémon gains an Ability known by the Target for the remainder of the encounter, or until it is Fainted.",
       "Trigger": "",
-      "Target": "A Trainer or PokÃ©mon within 10 meters",
+      "Target": "A Trainer or Pokémon within 10 meters",
       "Keywords": "",
-      "Effect 2": "Target - A Trainer or PokÃ©mon within 10 meters\nThe PokÃ©mon gains an Ability known by the Target for the remainder of the encounter, or until it is Fainted."
+      "Effect 2": "Target - A Trainer or Pokémon within 10 meters\nThe Pokémon gains an Ability known by the Target for the remainder of the encounter, or until it is Fainted."
     },
     {
       "Name": "Power Spot",
@@ -3457,9 +3457,9 @@
       "Frequency": "Scene - Free Action",
       "Effect": "The target's shadow becomes pinned to the target's current spot for 5 turns. During this time, the target is Slowed and Trapped, and cannot move more than 5 meters from the spot their shadow is pinned to; even being Pushed and other forced movement effects cannot force the target to Move more than 5 meters from that spot.",
       "Trigger": "",
-      "Target": "An adjacent Trainer or PokÃ©mon",
+      "Target": "An adjacent Trainer or Pokémon",
       "Keywords": "",
-      "Effect 2": "Target - An adjacent Trainer or PokÃ©mon\nThe target's shadow becomes pinned to the target's current spot for 5 turns. During this time, the target is Slowed and Trapped, and cannot move more than 5 meters from the spot their shadow is pinned to; even being Pushed and other forced movement effects cannot force the target to Move more than 5 meters from that spot."
+      "Effect 2": "Target - An adjacent Trainer or Pokémon\nThe target's shadow becomes pinned to the target's current spot for 5 turns. During this time, the target is Slowed and Trapped, and cannot move more than 5 meters from the spot their shadow is pinned to; even being Pushed and other forced movement effects cannot force the target to Move more than 5 meters from that spot."
     },
     {
       "Name": "Shed Skin",
@@ -3509,11 +3509,11 @@
     {
       "Name": "Simple",
       "Frequency": "Static",
-      "Effect": "When the PokÃ©mon's Combat Stages are altered, double the amount of Combat Stages they are raised or lowered.",
+      "Effect": "When the Pokémon's Combat Stages are altered, double the amount of Combat Stages they are raised or lowered.",
       "Trigger": "",
       "Target": "",
       "Keywords": "",
-      "Effect 2": "When the PokÃ©mon's Combat Stages are altered, double the amount of Combat Stages they are raised or lowered."
+      "Effect 2": "When the Pokémon's Combat Stages are altered, double the amount of Combat Stages they are raised or lowered."
     },
     {
       "Name": "Skill Link",
@@ -3527,11 +3527,11 @@
     {
       "Name": "Slow Start",
       "Frequency": "Static",
-      "Effect": "For 3 rounds after joining an encounter, the PokÃ©mon's Speed and Attack Stats are halved and they have 10 Damage Reduction.",
+      "Effect": "For 3 rounds after joining an encounter, the Pokémon's Speed and Attack Stats are halved and they have 10 Damage Reduction.",
       "Trigger": "",
       "Target": "",
       "Keywords": "",
-      "Effect 2": "For 3 rounds after joining an encounter, the PokÃ©mon's Speed and Attack Stats are halved and they have 10 Damage Reduction."
+      "Effect 2": "For 3 rounds after joining an encounter, the Pokémon's Speed and Attack Stats are halved and they have 10 Damage Reduction."
     },
     {
       "Name": "Slush Rush",
@@ -3554,20 +3554,20 @@
     {
       "Name": "Soundproof",
       "Frequency": "Static",
-      "Effect": "The PokÃ©mon is immune to Moves with the Sonic Keyword. Defensive.",
+      "Effect": "The Pokémon is immune to Moves with the Sonic Keyword. Defensive.",
       "Trigger": "",
       "Target": "",
       "Keywords": "",
-      "Effect 2": "The PokÃ©mon is immune to Moves with the Sonic Keyword. Defensive."
+      "Effect 2": "The Pokémon is immune to Moves with the Sonic Keyword. Defensive."
     },
     {
       "Name": "Speed Boost",
       "Frequency": "Static",
-      "Effect": "The PokÃ©mon's Speed is raised 1 Combat Stage at the end of each of its turns. Speed Boost has no effect while out of combat.",
+      "Effect": "The Pokémon's Speed is raised 1 Combat Stage at the end of each of its turns. Speed Boost has no effect while out of combat.",
       "Trigger": "",
       "Target": "",
       "Keywords": "",
-      "Effect 2": "The PokÃ©mon's Speed is raised 1 Combat Stage at the end of each of its turns. Speed Boost has no effect while out of combat."
+      "Effect 2": "The Pokémon's Speed is raised 1 Combat Stage at the end of each of its turns. Speed Boost has no effect while out of combat."
     },
     {
       "Name": "Spinning Dance",
@@ -3599,20 +3599,20 @@
     {
       "Name": "Stakeout",
       "Frequency": "Static",
-      "Effect": "The user gains a +2d6+4 bonus on damage rolls against foes that were released from a PokÃ©ball or entered the encounter since the user's last turn.",
+      "Effect": "The user gains a +2d6+4 bonus on damage rolls against foes that were released from a Pokéball or entered the encounter since the user's last turn.",
       "Trigger": "",
       "Target": "",
       "Keywords": "",
-      "Effect 2": "The user gains a +2d6+4 bonus on damage rolls against foes that were released from a PokÃ©ball or entered the encounter since the user's last turn."
+      "Effect 2": "The user gains a +2d6+4 bonus on damage rolls against foes that were released from a Pokéball or entered the encounter since the user's last turn."
     },
     {
       "Name": "Stall",
       "Frequency": "Static",
-      "Effect": "In a round's queue, a PokÃ©mon with Stall is always last. If a PokÃ©mon goes to the end of the queue, the PokÃ©mon with Stall is still the last to move. The user's actions taken on their Initiative Count (not Priority or Interrupt) cannot be Interrupted.",
+      "Effect": "In a round's queue, a Pokémon with Stall is always last. If a Pokémon goes to the end of the queue, the Pokémon with Stall is still the last to move. The user's actions taken on their Initiative Count (not Priority or Interrupt) cannot be Interrupted.",
       "Trigger": "",
       "Target": "",
       "Keywords": "",
-      "Effect 2": "In a round's queue, a PokÃ©mon with Stall is always last. If a PokÃ©mon goes to the end of the queue, the PokÃ©mon with Stall is still the last to move. The user's actions taken on their Initiative Count (not Priority or Interrupt) cannot be Interrupted."
+      "Effect 2": "In a round's queue, a Pokémon with Stall is always last. If a Pokémon goes to the end of the queue, the Pokémon with Stall is still the last to move. The user's actions taken on their Initiative Count (not Priority or Interrupt) cannot be Interrupted."
     },
     {
       "Name": "Stalwart",
@@ -3671,11 +3671,11 @@
     {
       "Name": "Sticky Hold",
       "Frequency": "Static",
-      "Effect": "The PokÃ©mon's held items cannot be stolen, switched, destroyed or dropped.",
+      "Effect": "The Pokémon's held items cannot be stolen, switched, destroyed or dropped.",
       "Trigger": "",
       "Target": "",
       "Keywords": "",
-      "Effect 2": "The PokÃ©mon's held items cannot be stolen, switched, destroyed or dropped."
+      "Effect 2": "The Pokémon's held items cannot be stolen, switched, destroyed or dropped."
     },
     {
       "Name": "Sticky Smoke",
@@ -3707,11 +3707,11 @@
     {
       "Name": "Super Luck",
       "Frequency": "Static",
-      "Effect": "The PokÃ©mon's Moves are Critical Hits on 18-20. If a Move already has an extended Critical Hit range, Super Luck extends that range by 2.",
+      "Effect": "The Pokémon's Moves are Critical Hits on 18-20. If a Move already has an extended Critical Hit range, Super Luck extends that range by 2.",
       "Trigger": "",
       "Target": "",
       "Keywords": "",
-      "Effect 2": "The PokÃ©mon's Moves are Critical Hits on 18-20. If a Move already has an extended Critical Hit range, Super Luck extends that range by 2."
+      "Effect 2": "The Pokémon's Moves are Critical Hits on 18-20. If a Move already has an extended Critical Hit range, Super Luck extends that range by 2."
     },
     {
       "Name": "Surge Surfer",
@@ -3815,11 +3815,11 @@
     {
       "Name": "Thrust",
       "Frequency": "Static",
-      "Effect": "All moves used by this PokÃ©mon which consult the Attack stat now have the Push keyword. The default push for moves is 1 meter. If a move already has the Push Keyword, that move may push 1 additional meter.",
+      "Effect": "All moves used by this Pokémon which consult the Attack stat now have the Push keyword. The default push for moves is 1 meter. If a move already has the Push Keyword, that move may push 1 additional meter.",
       "Trigger": "",
       "Target": "",
       "Keywords": "",
-      "Effect 2": "All moves used by this PokÃ©mon which consult the Attack stat now have the Push keyword. The default push for moves is 1 meter. If a move already has the Push Keyword, that move may push 1 additional meter."
+      "Effect 2": "All moves used by this Pokémon which consult the Attack stat now have the Push keyword. The default push for moves is 1 meter. If a move already has the Push Keyword, that move may push 1 additional meter."
     },
     {
       "Name": "Tinted Lens",
@@ -3869,11 +3869,11 @@
     {
       "Name": "Trace",
       "Frequency": "Scene - Free Action",
-      "Effect": "The PokÃ©mon gains an Ability known by the Target for the remainder of the encounter, or until it is Fainted.",
+      "Effect": "The Pokémon gains an Ability known by the Target for the remainder of the encounter, or until it is Fainted.",
       "Trigger": "",
-      "Target": "A Trainer or PokÃ©mon within 10 meters",
+      "Target": "A Trainer or Pokémon within 10 meters",
       "Keywords": "",
-      "Effect 2": "Target - A Trainer or PokÃ©mon within 10 meters\nThe PokÃ©mon gains an Ability known by the Target for the remainder of the encounter, or until it is Fainted."
+      "Effect 2": "Target - A Trainer or Pokémon within 10 meters\nThe Pokémon gains an Ability known by the Target for the remainder of the encounter, or until it is Fainted."
     },
     {
       "Name": "Transistor",
@@ -3914,11 +3914,11 @@
     {
       "Name": "Ugly",
       "Frequency": "Static",
-      "Effect": "The PokÃ©mon's Moves Flinch Targets on a roll of 19+. If a move already has a chance of Flinching foes, The Effect Range is increased by +2. During the Introduction Stage of a Contest using this PokÃ©mon, any 6s that are rolled instead count as 1s.",
+      "Effect": "The Pokémon's Moves Flinch Targets on a roll of 19+. If a move already has a chance of Flinching foes, The Effect Range is increased by +2. During the Introduction Stage of a Contest using this Pokémon, any 6s that are rolled instead count as 1s.",
       "Trigger": "",
       "Target": "",
       "Keywords": "",
-      "Effect 2": "The PokÃ©mon's Moves Flinch Targets on a roll of 19+. If a move already has a chance of Flinching foes, The Effect Range is increased by +2. During the Introduction Stage of a Contest using this PokÃ©mon, any 6s that are rolled instead count as 1s."
+      "Effect 2": "The Pokémon's Moves Flinch Targets on a roll of 19+. If a move already has a chance of Flinching foes, The Effect Range is increased by +2. During the Introduction Stage of a Contest using this Pokémon, any 6s that are rolled instead count as 1s."
     },
     {
       "Name": "Unaware",
@@ -3959,11 +3959,11 @@
     {
       "Name": "Victory Star",
       "Frequency": "Static",
-      "Effect": "Any allied PokÃ©mon in the encounter gain a +2 Bonus to Accuracy Rolls.",
+      "Effect": "Any allied Pokémon in the encounter gain a +2 Bonus to Accuracy Rolls.",
       "Trigger": "",
       "Target": "",
       "Keywords": "",
-      "Effect 2": "Any allied PokÃ©mon in the encounter gain a +2 Bonus to Accuracy Rolls."
+      "Effect 2": "Any allied Pokémon in the encounter gain a +2 Bonus to Accuracy Rolls."
     },
     {
       "Name": "Vigor",
@@ -4013,11 +4013,11 @@
     {
       "Name": "Wandering Spirit",
       "Frequency": "Scene - Free Action, Reaction",
-      "Effect": "The user exchanges Wandering Spirit with a random Ability of the opposing PokÃ©mon, as per the Move Skill Swap.",
+      "Effect": "The user exchanges Wandering Spirit with a random Ability of the opposing Pokémon, as per the Move Skill Swap.",
       "Trigger": "The user is hit by a Melee attack",
       "Target": "",
       "Keywords": "",
-      "Effect 2": "Trigger - The user is hit by a Melee attack\nThe user exchanges Wandering Spirit with a random Ability of the opposing PokÃ©mon, as per the Move Skill Swap."
+      "Effect 2": "Trigger - The user is hit by a Melee attack\nThe user exchanges Wandering Spirit with a random Ability of the opposing Pokémon, as per the Move Skill Swap."
     },
     {
       "Name": "Wash Away",
@@ -4067,11 +4067,11 @@
     {
       "Name": "Weaponize",
       "Frequency": "Static",
-      "Effect": "While being wielded as a Living Weapon and being actively Commanded as a PokÃ©mon, the user may Intercept for its Wielder as a Free Action.",
+      "Effect": "While being wielded as a Living Weapon and being actively Commanded as a Pokémon, the user may Intercept for its Wielder as a Free Action.",
       "Trigger": "",
       "Target": "",
       "Keywords": "",
-      "Effect 2": "While being wielded as a Living Weapon and being actively Commanded as a PokÃ©mon, the user may Intercept for its Wielder as a Free Action."
+      "Effect 2": "While being wielded as a Living Weapon and being actively Commanded as a Pokémon, the user may Intercept for its Wielder as a Free Action."
     },
     {
       "Name": "Weeble",
@@ -4157,11 +4157,11 @@
     {
       "Name": "Wonder Guard",
       "Frequency": "Static",
-      "Effect": "Only damaging attacks that are Super-Effective affect the PokÃ©mon with Wonder Guard; all other damaging attacks cannot hit the user or deal damage. Wonder Guard loses its effect if the user has no weaknesses. Defensive.",
+      "Effect": "Only damaging attacks that are Super-Effective affect the Pokémon with Wonder Guard; all other damaging attacks cannot hit the user or deal damage. Wonder Guard loses its effect if the user has no weaknesses. Defensive.",
       "Trigger": "",
       "Target": "",
       "Keywords": "",
-      "Effect 2": "Only damaging attacks that are Super-Effective affect the PokÃ©mon with Wonder Guard; all other damaging attacks cannot hit the user or deal damage. Wonder Guard loses its effect if the user has no weaknesses. Defensive."
+      "Effect 2": "Only damaging attacks that are Super-Effective affect the Pokémon with Wonder Guard; all other damaging attacks cannot hit the user or deal damage. Wonder Guard loses its effect if the user has no weaknesses. Defensive."
     },
     {
       "Name": "Wonder Skin",
@@ -4283,11 +4283,11 @@
     {
       "Name": "Family Unit",
       "Frequency": "Static",
-      "Effect": "The user has two tokens instead of one, which may share a square, and do so when sent out. When the user Shifts, both tokens may move independently and do not need to remain adjacent. The user cannot be hit by a Move twice due to both tokens being targeted. The two tokens and their allies may treat each other as different PokÃ©mon for the purposes of positioning effects such as flanking, Moves like Beat Up, or Abilities such as Friend Guard and Pack Hunt.\nBonus: The user may make two Attacks of Opportunity per round instead of one.",
+      "Effect": "The user has two tokens instead of one, which may share a square, and do so when sent out. When the user Shifts, both tokens may move independently and do not need to remain adjacent. The user cannot be hit by a Move twice due to both tokens being targeted. The two tokens and their allies may treat each other as different Pokémon for the purposes of positioning effects such as flanking, Moves like Beat Up, or Abilities such as Friend Guard and Pack Hunt.\nBonus: The user may make two Attacks of Opportunity per round instead of one.",
       "Trigger": "",
       "Target": "",
       "Keywords": "Gen 9",
-      "Effect 2": "Keywords - Gen 9\nThe user has two tokens instead of one, which may share a square, and do so when sent out. When the user Shifts, both tokens may move independently and do not need to remain adjacent. The user cannot be hit by a Move twice due to both tokens being targeted. The two tokens and their allies may treat each other as different PokÃ©mon for the purposes of positioning effects such as flanking, Moves like Beat Up, or Abilities such as Friend Guard and Pack Hunt.\nBonus: The user may make two Attacks of Opportunity per round instead of one."
+      "Effect 2": "Keywords - Gen 9\nThe user has two tokens instead of one, which may share a square, and do so when sent out. When the user Shifts, both tokens may move independently and do not need to remain adjacent. The user cannot be hit by a Move twice due to both tokens being targeted. The two tokens and their allies may treat each other as different Pokémon for the purposes of positioning effects such as flanking, Moves like Beat Up, or Abilities such as Friend Guard and Pack Hunt.\nBonus: The user may make two Attacks of Opportunity per round instead of one."
     },
     {
       "Name": "Fungus Lord",
@@ -4717,9 +4717,9 @@
       "Frequency": "Scene 2x - Swift Action",
       "Effect": "The target is Flinched and loses 1 Combat Stage in your choice of Attack or Special Attack. You may target a specific foe only once per Scene with Intimidate.",
       "Trigger": "",
-      "Target": "A PokÃ©mon or Trainer within 5m",
+      "Target": "A Pokémon or Trainer within 5m",
       "Keywords": "Gen 9",
-      "Effect 2": "Keywords - Gen 9\nTarget - A PokÃ©mon or Trainer within 5m\nThe target is Flinched and loses 1 Combat Stage in your choice of Attack or Special Attack. You may target a specific foe only once per Scene with Intimidate."
+      "Effect 2": "Keywords - Gen 9\nTarget - A Pokémon or Trainer within 5m\nThe target is Flinched and loses 1 Combat Stage in your choice of Attack or Special Attack. You may target a specific foe only once per Scene with Intimidate."
     },
     {
       "Name": "Pickup",
@@ -4744,9 +4744,9 @@
       "Frequency": "Scene - Swift Action",
       "Effect": "The target becomes Suppressed and cannot gain positive CS or trade in Food Buffs for 1 full round.",
       "Trigger": "",
-      "Target": "A PokÃ©mon or Trainer within 6m",
+      "Target": "A Pokémon or Trainer within 6m",
       "Keywords": "Gen 9 Errata",
-      "Effect 2": "Keywords - Gen 9 Errata\nTarget - A PokÃ©mon or Trainer within 6m\nThe target becomes Suppressed and cannot gain positive CS or trade in Food Buffs for 1 full round."
+      "Effect 2": "Keywords - Gen 9 Errata\nTarget - A Pokémon or Trainer within 6m\nThe target becomes Suppressed and cannot gain positive CS or trade in Food Buffs for 1 full round."
     },
     {
       "Name": "Instinct",

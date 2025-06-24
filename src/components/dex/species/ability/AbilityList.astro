@@ -13,8 +13,8 @@ const { pkmn } = Astro.props
                 return (
                 <li class="list-row hover:bg-base-300 py-2 cursor-pointer" onclick={`${modalId}.showModal()`}>
                     <div class="list-col-grow mr-[40px]">
-                        <div>{ability.name}</div>
-                        <div class="text-xs font-thin">{ability.type}</div>
+                        <div class="text-md font-semibold tracking-wide">{ability.name}</div>
+                        <div class="text-xs font-thin text-pkb-red">{ability.type}</div>
                     </div>                 
                     <AbilityModalBox modalId={ modalId} abilityName = { ability.name } />
                 </li>

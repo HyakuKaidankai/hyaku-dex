@@ -25,17 +25,16 @@ const skill_keys = [
 <div class="card bg-base-200 text-neutral-content border-base-300 rounded-box border">
     <div class="card-body p-[15px]">
         <p class="px-4 pb-2 text-xs opacity-60 tracking-wide">Skill list</p>
-        <div class="grid grid-cols-4 2">
-                {skill_keys.map( (skill:string, i:any) => {
+        <div class="flex flex-wrap gap-2 justify-evenly">
+            {skill_keys.map( (skill:string, i:any) => {
                     let skill_mod_key =  (i == 0) ? `Mod`: `Mod__${i}`
                     return (
-                    <div class="card bg-base-100 border border-base-300 p-[5px]">                    
+                    <div class="card bg-base-100 border border-base-300 p-[5px] w-[80px]">                    
                         <div class="font-base text-xs text-center">{skill}</div>
                         <div class="font-thin text-xs text-center opacity-80 tabular-nums">{pkmn[skill]}d+{pkmn[skill_mod_key]}</div>
                     </div>
                 )
-                })}            
-            </div>    
-        </div>          
+            })}
+        </div>        
     </div>
 </div>
