@@ -1,0 +1,23 @@
+---
+import { Image } from 'astro:assets';
+import PhysicalIcon from "../../assets/PhysicalIcon.png";
+import SpecialIcon from "../../assets/SpecialIcon.png";
+import StatusIcon from "../../assets/StatusIcon.png";
+
+const { moveCategory, logoWidth = 19, logoHeight = 19, textSize = "sm", fontWeight = "bold", px = "14px", py = "5px" } = Astro.props;
+
+const iconMap = {
+  physical: PhysicalIcon,
+  special: SpecialIcon,
+  status: StatusIcon
+};
+
+// Normalize the moveCategory to lowercase to match iconMap keys
+const normalizedCategory = moveCategory ? moveCategory.toLowerCase() : 'physical';
+const icon = iconMap[normalizedCategory] || PhysicalIcon;
+
+---
+<div class={`text-${textSize} justify-between font-${fontWeight} tracking-wide capitalize px-[${px}] py-[${py}] rounded-sm flex gap-[4px] border-1 border-base-300 bg-base-100`}>
+    <Image src={icon} width={logoWidth} height={logoHeight} alt={`${moveCategory || 'Physical'} Icon`} />
+    <div class="text-right">{moveCategory}</div>
+</div>

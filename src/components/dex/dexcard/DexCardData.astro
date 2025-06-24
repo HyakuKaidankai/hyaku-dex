@@ -7,10 +7,10 @@ const pkmnName = pkmn.display_name ? pkmn.display_name : pkmn["Species Name"]
 ---
 <div class="flex flex-col flex-1">
     <div class="flex flex-1 justify-around content-center items-center">
-        <h1 class="text-center font-semibold tracking-wide text-lg mb-[5px]">{ pkmnName }</h1>
-    </div>
-    <div class="flex flex-1 justify-around content-center items-center">
-        { pkmn["Type1"] && <TypeBadge typeName={ pkmn["Type1"] } textSize="xs" height="26px" logoWidth={16} logoHeight={16} fontWeight="semibold" /> }
-        { pkmn["Type2"] && <TypeBadge typeName={ pkmn["Type2"] } textSize="xs" height="26px" logoWidth={16} logoHeight={16} fontWeight="semibold" /> }
+        <h1 class="text-center font-semibold tracking-wide text-md mb-[5px]">{ pkmnName }</h1>
+    </div>    
+    <div class="flex flex-1 justify-between content-center items-center">
+        { pkmn["Type1"] && <TypeBadge typeName={ pkmn["Type1"] } textSize="xs" height="26px" logoWidth={16} logoHeight={16} fontWeight="medium" px="8px" py="6px"/> }
+        { pkmn["Type2"] && <TypeBadge typeName={ pkmn["Type2"] } textSize="xs" height="26px" logoWidth={16} logoHeight={16} fontWeight="medium" px="8px" py="6px"/> }
     </div>
 </div>

@@ -1,7 +1,10 @@
 ---
 const { modalId, moveName } = Astro.props
 
-import { getMove } from '../../../functions/move.ts';
+import TypeBadge from '../../../ui/TypeBadge.astro';
+import MoveCategoryBadge from '../../../ui/MoveCategoryBadge.astro';
+import MoveDBData from './MoveDBData.astro';
+import { getMove, getFrequencyDescription } from '../../../functions/move.ts';
 
 let data = getMove(moveName);
 
@@ -12,15 +15,59 @@ function nl2br(text: string) {
 <dialog id={modalId} class="modal">
     <div class="modal-box">
         <form method="dialog">
-            <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
+            <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2 z-50">✕</button>
         </form>              
-        <div class="w-full text-center text-lg font-semibold tracking-wide">{moveName}</div>
-        <div class="divider"></div>
-        <div class="mt-[10px] font-semibold" set:html={`Type: ${nl2br( data["Type__1"] )}`}></div>
-        <div class="mt-[10px] font-semibold" set:html={`Category: ${nl2br( data["Category__1"] )}`}></div>
-        <div class="mt-[10px] font-semibold" set:html={`Damage base: ${data["DB"]}`}></div>
-        <div class="mt-[10px] font-semibold" set:html={`Accuracy check: ${data["AC"]}`}></div>
-        <div class="mt-[10px] font-semibold" set:html={`Range: ${nl2br( data["Range"] )}`}></div>
+
+        <div class="card border-1 border-base-300 bg-base-200">
+            <div class="card-body justify-around text-center p-4">
+                <div class="w-full text-center flex items-center justify-between gap-2">
+                    <div class="text-lg font-semibold tracking-wide">{moveName}</div>
+                    <div class="flex gap-2">
+                        <TypeBadge typeName={data["Type__1"]} textSize="xs" height="26px" logoWidth={16} logoHeight={16} fontWeight="medium" px="8px" py="6px"></TypeBadge>
+                        <MoveCategoryBadge moveCategory={data["Category__1"]} textSize="xs" height="26px" logoWidth={16} logoHeight={16} fontWeight="medium" px="8px" py="6px"></MoveCategoryBadge>
+                    </div>
+                </div>
+            </div>
+        </div>
+        { !isNaN(data["DB"]) && !isNaN(parseFloat(data["DB"])) && <MoveDBData db={data["DB"]} />}
+
+        <div class="card border-1 border-base-300 bg-base-200 mt-2">
+            <div class="card-body p-2 gap-4">
+
+                <div class="overflow-x-auto">
+                    <table class="table">
+                        <tbody>
+                            <tr>
+                                <th>Frequency</th>
+                                <td>
+                                    <div class="tooltip tooltip-bottom">
+                                        <div class="tooltip-content">
+                                            {getFrequencyDescription(data["Frequency"])}
+                                        </div>
+                                        <div>{data["Frequency"]}</div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>Accuracy check</th>
+                                <td>{data["AC"]}</td>
+                            </tr>
+                            <tr>
+                                <th>Range</th>
+                                <td>{nl2br( data["Range"] )}</td>
+                            </tr>
+                            <tr>
+                                <th>Contest stats</th>
+                                <td>{data["Contest Stats"]}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+
+                
+            </div>
+        </div>
         <div class="divider"></div>
         <div set:html={`${nl2br(data["Effects"])}`}></div>
     </div>

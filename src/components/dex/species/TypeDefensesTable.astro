@@ -1,24 +1,48 @@
 ---
 import TypeBadge from '../../ui/TypeBadge.astro';
-
 import { getTypeDefenses, listTypeWithoutStellar } from '../../functions/type.ts';
 
-const { pkmn } = Astro.props
+const { pkmn } = Astro.props;
 
 const chartValues = getTypeDefenses(pkmn["Type1"], pkmn["Type2"]);
 
-const types = listTypeWithoutStellar()
+// Group types by their values
+const groupedTypes: { [key: string]: string[] } = {};
+
+Object.keys(chartValues).forEach(type => {
+  const value = chartValues[type];
+  if (!groupedTypes[String(value)]) {
+    groupedTypes[String(value)] = [];
+  }
+  groupedTypes[String(value)].push(type);
+});
+
+// Convert the groupedTypes object into an array of { value, types } objects
+const groupedTypesArray = Object.keys(groupedTypes).map(value => ({
+  value: parseFloat(value),
+  types: groupedTypes[value]
+}));
+
+// Sort the groups by value in descending order
+groupedTypesArray.sort((a, b) => b.value - a.value);
 
 ---
 <div class="card bg-base-200 text-neutral-content border-base-300 rounded-box border w-full md:w-auto">
-    <div class="card-body p-[15px]">
-        <div class="flex flex-wrap gap-2 justify-center justify-items-center">
-        {types.map( (type:any) => (
-            <div class="w-[125px]">
-                <TypeBadge typeName={ type.name }  textSize="xs" height="26px" logoWidth={16} logoHeight={16} fontWeight="semibold" />
-                <div class="font-bold text-xl text-center tabular-nums"> {chartValues[type.name]}</div>
-            </div>
-        ))}
+  <div class="card-body p-[15px]">
+    <div class="flex flex-wrap gap-2 justify-center justify-items-center">
+      {groupedTypesArray.map((group) => (
+        <div class="w-full">
+          <div class="font-bold text-xl text-center tabular-nums mb-2">Takes {group.value}x from</div>
+          <div class="flex flex-wrap gap-2 justify-center">
+            {group.types.map((type) => (
+              <div class="w-[105px]">
+                <TypeBadge typeName={type} textSize="xs" height="26px" logoWidth={16} logoHeight={16} fontWeight="semibold" />
+              </div>
+            ))}
+          </div>
         </div>
+      ))}
     </div>
+  </div>
 </div>
+

@@ -1,0 +1,25 @@
+---
+import { listMoves, getMove } from '../../components/functions/move';
+
+const { moveName } = Astro.params;
+const move = getMove(moveName);
+if (!move) {
+  // Handle the case where the move is not found
+  return Response.redirect('/404', 302);
+}
+
+export function getStaticPaths() {
+    let ret: { params: { moveName: string } }[] = [];
+    for(let m of listMoves()){
+        let static_param = {
+            params: {
+                moveName: m["Name"]
+            }
+        }
+        ret.push(static_param)
+    }    
+    return ret;
+}
+
+---
+<h1>Move: {moveName}</h1>

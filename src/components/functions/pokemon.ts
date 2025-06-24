@@ -1,5 +1,5 @@
 import BasicData from '../../assets/data/pokemons.json';
-import DexFileInfo from '../../assets/data/dex_info_compressed.json';
+import DexFileInfo from '../../assets/data/dex_info.json';
 import HelpLists from '../../assets/data/basic_dexinfo_match_help.json';
 
 // Returns the pokemon data of the Google sheets

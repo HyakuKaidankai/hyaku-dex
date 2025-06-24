@@ -25,7 +25,7 @@ const skill_keys = [
 <div class="card bg-base-200 text-neutral-content border-base-300 rounded-box border">
     <div class="card-body p-[15px]">
         <p class="px-4 pb-2 text-xs opacity-60 tracking-wide">Skill list</p>
-        <div class="grid grid-cols-4 gap-2">
+        <div class="grid grid-cols-4 2">
                 {skill_keys.map( (skill:string, i:any) => {
                     let skill_mod_key =  (i == 0) ? `Mod`: `Mod__${i}`
                     return (

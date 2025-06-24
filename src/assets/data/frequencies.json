@@ -1,0 +1,22 @@
+[
+    {
+        "name": "At-Will",
+        "description": "These abilities can be used as often as desired, with no rest needed to perform the attack again."
+    },
+    {  
+         "name": "EOT",
+         "description": "Every Other Turn. These abilities can be used once every other turn, meaning they can be used on your turn, but not on the next turn."
+    },
+    {
+        "name": "Scene", 
+        "description": "These abilities can be used X (1 if not specified) times per scene. If they can be used multiple times in a single scene, they are also considered EOT."
+    },
+    {
+        "name": "Daily",
+        "description": "These abilities can be used X (1 if not specified) times per day. Even if they have multiple daily uses, they can only be used once per scene."
+    },
+    {
+        "name": "Static",
+        "description": "The effect is always granted to the user."
+    }
+]

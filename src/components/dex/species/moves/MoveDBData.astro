@@ -1,0 +1,101 @@
+---
+import { getDBData } from '../../../functions/move.ts';
+import DiceIcon from '../../../../assets/dice-d20.svg';
+
+const { db } = Astro.props;
+
+let dbData = getDBData(db);
+
+function averageDiceRoll(expression: any) {
+  const { numDice, numSides, constant } = parseDiceExpression(expression);
+  const averageOneDie = (1 + numSides) / 2;
+  return numDice * averageOneDie + constant;
+}
+
+function minDiceRoll(expression: any) {
+  const { numDice, numSides, constant } = parseDiceExpression(expression);
+  return numDice * 1 + constant; // Minimum roll is numDice * 1 + constant
+}
+
+function maxDiceRoll(expression: any) {
+  const { numDice, numSides, constant } = parseDiceExpression(expression);
+  return numDice * numSides + constant; // Maximum roll is numDice * numSides + constant
+}
+
+function parseDiceExpression(expression: string) {
+  const expr = expression.replace(/\s+/g, '');
+  const diceRegex = /^(?:(\d+)d|d)(\d+)([+-]\d+)?$/i;
+  const match = expr.match(diceRegex);
+
+  if (!match) {
+    console.log(expression);
+    throw new Error('Invalid dice expression format. Expected format like "3d8+10" or "d8".');
+  }
+
+  let numDice;
+  if (match[1]) {
+    numDice = parseInt(match[1], 10);
+    if (numDice <= 0) {
+      throw new Error('Number of dice must be positive.');
+    }
+  } else {
+    numDice = 1; // Default to 1 die if not specified
+  }
+
+  const numSides = parseInt(match[2], 10);
+  if (numSides < 2) {
+    throw new Error('Number of sides per die must be at least 2.');
+  }
+
+  let constant = 0;
+  if (match[3]) {
+    constant = parseInt(match[3], 10);
+  }
+
+  return { numDice, numSides, constant };
+}
+
+const minimum = Math.round(minDiceRoll(dbData.roll));
+const average = Math.round(averageDiceRoll(dbData.roll));
+const maximum = Math.round(maxDiceRoll(dbData.roll));
+
+---
+
+<div class="card border-1 border-base-300 bg-base-200 mt-2">
+  <div class="card-body p-4 gap-4">
+    <div class="flex">        
+        <div class="flex-1">
+            <div class="stat-title text-xs">Damage base</div>
+            <div class="text-left tabular-nums text-2xl text-pkb-red font-semibold">
+                {db}
+            </div>
+        </div>
+        <div class="flex-1">
+            <div class="stat-title text-xs">Damage roll</div>
+            <div class="text-left tabular-nums text-2xl text-pkb-red font-semibold">
+                {dbData.roll}
+            </div>
+        </div>    
+    </div>
+    <div class="flex">        
+        <div class="flex-1">
+            <div class="stat-title text-xs">Minimum</div>
+            <div class="text-left tabular-nums text-lg font-semibold">
+                {minimum}
+            </div>
+        </div>
+        <div class="flex-1">
+            <div class="stat-title text-xs">Average</div>
+            <div class="text-left tabular-nums text-lg font-semibold">
+                {average}
+            </div>
+        </div>        
+        <div class="flex-1">
+            <div class="stat-title text-xs">Maximum</div>
+            <div class="text-left tabular-nums text-lg font-semibold">
+                {maximum}
+            </div>
+        </div>
+    </div>
+  </div>
+</div>

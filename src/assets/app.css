@@ -7,6 +7,8 @@
 @source inline("font-bold");
 
 @source inline("py-[5px]");
+@source inline("py-[6px]");
+@source inline("px-[8px]");
 @source inline("px-[14px]");
 @source inline("text-sm");
 
