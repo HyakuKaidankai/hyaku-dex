@@ -34,9 +34,9 @@ const pagesMap = [...Array(numberOfPages).keys()]
                     const paginationClasses = prefix +"-row" + " page-" + pageNumber
                 return (
                     <tr class={`hover:bg-base-300 cursor-pointer ${enablePagination && paginationClasses}`} onclick={`${modalId}.showModal()`}>
+                        {enableNatCol && <td class="w-16">{move.natural && "(N)"} {move.is_pokeapi && "(P)"}</td>}
                         {enableLvCol && <td class="w-16">{move.lv}</td>} 
-                        {enableNatCol && <td class="w-16">{move.natural && "(N)"} </td>}
-                        <td class={`${move.sgn && "text-pkb-red font-semibold"}`}>{moveName}</td>
+                        <td class={`capitalize ${move.sgn && "text-pkb-red font-semibold"}`}>{moveName}</td>
                         <td class={`${moveIsStab(pkmn, getMove(moveName)) && "text-pkb-red font-semibold"}`}>{getMove(moveName)?.["Type__1"] ?? "Unknown"}</td>
                     </tr>
                 )

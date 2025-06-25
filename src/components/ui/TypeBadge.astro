@@ -45,7 +45,6 @@ const typeLogos = {
 
 const typeKey = typeName.toLowerCase() as keyof typeof typeLogos;
 const TypeLogo = typeLogos[typeKey];
-
 ---
 <div class={`text-${textSize} justify-between font-${fontWeight} tracking-wide capitalize px-[${px}] py-[${py}] rounded-sm flex gap-[4px]`} style={{
     backgroundColor: `${getTypeColor(typeName).color}`

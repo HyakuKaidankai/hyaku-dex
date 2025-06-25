@@ -11,6 +11,7 @@ let data = getMove(moveName);
 function nl2br(text: string) {
   return text.replace(/\n/g, '<br>');
 }
+
 ---
 <dialog id={modalId} class="modal">
     <div class="modal-box">
@@ -21,7 +22,7 @@ function nl2br(text: string) {
         <div class="card border-1 border-base-300 bg-base-200">
             <div class="card-body justify-around text-center p-4">
                 <div class="w-full text-center flex items-center justify-between gap-2">
-                    <div class="text-lg font-semibold tracking-wide">{moveName}</div>
+                    <div class="text-lg font-semibold tracking-wide capitalize">{moveName}</div>
                     <div class="flex gap-2">
                         <TypeBadge typeName={data["Type__1"]} textSize="xs" height="26px" logoWidth={16} logoHeight={16} fontWeight="medium" px="8px" py="6px"></TypeBadge>
                         <MoveCategoryBadge moveCategory={data["Category__1"]} textSize="xs" height="26px" logoWidth={16} logoHeight={16} fontWeight="medium" px="8px" py="6px"></MoveCategoryBadge>
@@ -29,7 +30,7 @@ function nl2br(text: string) {
                 </div>
             </div>
         </div>
-        { !isNaN(data["DB"]) && !isNaN(parseFloat(data["DB"])) && <MoveDBData db={data["DB"]} />}
+        { data["DB"] && !isNaN(data["DB"]) && !isNaN(parseFloat(data["DB"])) && <MoveDBData db={data["DB"]} />}
 
         <div class="card border-1 border-base-300 bg-base-200 mt-2">
             <div class="card-body p-2 gap-4">

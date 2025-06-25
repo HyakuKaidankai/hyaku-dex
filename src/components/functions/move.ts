@@ -19,6 +19,7 @@ export function getMove(move: string) {
         Range:"Unknown",
         Effects:"Unknown",
         Frequency:"Unknown",
+        Name: "Unknown",
         "Contest Stats": "Unknown",
     };
     return md
@@ -44,4 +45,37 @@ export function getFrequencyDescription(frequency: string) {
         description: "Unknown",
     };
     return fd.description;
+}
+
+export function sanitizeMoveName(move: string) {
+    const special_cases = [
+        ["baby-doll-eyes", "baby-doll eyes"],
+        ["power-up-punch", "power-up punch"],
+        ["wake-up-slap", "wake-up slap"],
+        ["shell-side-arm", "shell side arm"],
+        ["vice-grip", "vise grip"],
+        ["high-jump-kick", "high jump kick"],
+        ["conversion-2", "conversion2"],
+        ["roar-of-time", "roar of time"],
+        ["kings-shield", "king's shield"],
+        ["forests-curse", "forest's curse"],
+        ["lands-wrath", "land's wrath"],
+        ["natures-madness", "nature's madness"],
+        ["double-iron-bash", "double iron bash"],
+        ["make-it-rain", "make it rain"]
+    ]
+
+    const foundCase = special_cases.find(subArray => subArray[0] === move);
+    if(foundCase) {
+        move = foundCase[1];
+    }
+
+    if (getMove(move).Name === "Unknown") {
+        move = move.replace("-", " ")
+    }    
+    if (getMove(move).Name === "Unknown") {
+        throw new Error(`Move "${move}" not found in the database.`);
+    } else {
+        return move;
+    }
 }

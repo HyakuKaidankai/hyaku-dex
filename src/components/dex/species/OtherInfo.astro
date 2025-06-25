@@ -1,9 +1,7 @@
 ---
-const { pkmn } = Astro.props
+const { pkmn, data } = Astro.props
 
-// Fetch Pokémon data at build time
-const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${pkmn["API ID"]}/`);
-const data = await response.json();
+// Fetch Pokémon data at build time - Species data is obtained in the species component, so that we dont call the same pokeapi endpoint multiple times
 const species_response = await fetch(data.species.url);
 const species_data = await species_response.json();
 

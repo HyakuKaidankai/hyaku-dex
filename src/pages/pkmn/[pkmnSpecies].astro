@@ -14,7 +14,7 @@ import MoveListLegend from "../../components/dex/species/moves/MoveListLegend.as
 import MoveListTable from "../../components/dex/species/moves/MoveListTable.astro";
 
 import { listPkmn, getPkmn, getPkmnDexInfo } from "../../components/functions/pokemon.ts";
-import { listMoves } from '../../components/functions/move.ts';
+import { listMoves, sanitizeMoveName } from '../../components/functions/move.ts';
 
 // Find the specific Pokémon data based on the dynamic parameter
 const { pkmnSpecies } = Astro.params;
@@ -24,6 +24,7 @@ if (!pkmn) {
   return Response.redirect('/404', 302);
 }
 
+// Static paths 
 export function getStaticPaths() {
     let ret: { params: { pkmnSpecies: string } }[] = [];
     for(let pkmn of listPkmn()){
@@ -37,11 +38,60 @@ export function getStaticPaths() {
     return ret;
 }
 
-const isMew = pkmn["Species Name"].toLowerCase() == "mew";
-const isZygarde = pkmnSpecies.toLowerCase().includes("zygarde");
-const isHoopa = pkmnSpecies.toLowerCase().includes("hoopa");
-const moves = getPkmnDexInfo(pkmn["Species Name"]).move;
+// Get PokeAPI data for the Pokémon
+const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${pkmn["API ID"]}/`);
+const data = await response.json();
 
+// Generate list of pokeapi moves
+let pokeapi_lv_moves = [];
+let pokeapi_other_moves = new Set();
+for(let obj of data.moves) {
+    for(let v of obj.version_group_details) {
+        if(v.move_learn_method.name == "level-up") {       
+            let existingMove = pokeapi_lv_moves.find(move => move.name === obj.move.name);
+            if(existingMove) {
+                /*
+                    If moves already exists in the list, its a level requirement for aration, as Poken older geneAPI gives an ordered list from older to newer.
+                    This ensures that we only keep the latest level requirement for the move.
+                */
+                existingMove.level = v.level_learned_at;
+            } else {
+                // If it does not exist, add it
+                pokeapi_lv_moves.push({
+                    name: obj.move.name,
+                    level: v.level_learned_at
+                });
+            }
+        } else {
+            pokeapi_other_moves.add(obj.move.name);
+        }
+    }
+}
+pokeapi_lv_moves.sort((a, b) => a.level - b.level); // Sort by level
+
+// Vars and special case handling 
+const moves     = getPkmnDexInfo(pkmn["Species Name"]).move; //Need
+const isMew     = pkmn["Species Name"].toLowerCase() == "mew";
+const isZygarde = pkmnSpecies.toLowerCase().includes("zygarde");
+const isHoopa   = pkmnSpecies.toLowerCase().includes("hoopa");
+
+for(let m of pokeapi_lv_moves) {
+    // name needs to be sanitized to match the move names in the HyakuDex, as the PokeAPI uses different naming conventions
+    let move_name = sanitizeMoveName(m.name);
+    if( !moves.lv.some((move:any) => move.name.toLowerCase() === move_name.toLowerCase()) ) {
+        console.log(`Adding move: ${move_name} at level ${m.level}`);
+        // If the move is not already in the lv list, add it
+        moves.lv.push({
+            name: move_name,
+            lv: m.level,
+            is_pokeapi: true
+        });
+    }
+}
+
+moves.lv.sort((a:any, b:any) => a.lv - b.lv); // Sort by level
+
+// Handle special case for Mew, who learns all moves
 let otherMoveList = []
 if(isMew) {
   otherMoveList = listMoves().map((move:any) => {
@@ -50,6 +100,19 @@ if(isMew) {
   });
 } else {
   otherMoveList = moves.other
+  for(let m of pokeapi_other_moves) {
+      // name needs to be sanitized to match the move names in the HyakuDex, as the PokeAPI uses different naming conventions
+      let move_name = sanitizeMoveName(m);
+      if( !otherMoveList.some((move:any) => move.name.toLowerCase() === move_name.toLowerCase()) ) {
+          console.log(`Adding move: ${move_name} to other moves`);
+          // If the move is not already in the other list, add it
+          otherMoveList.push({
+              name: move_name,
+              is_pokeapi: true
+          });
+      }
+  }
+
 }
 
 ---
@@ -67,19 +130,18 @@ if(isMew) {
             <div class="flex flex-col gap-2 w-full md:w-[350px]">
                 <SpeciesImage pkmn={ pkmn } />      
                 <StatTable pkmn={pkmn} /> 
-                <OtherInfo pkmn={pkmn} />
+                <OtherInfo pkmn={pkmn} data={data} />
             </div>
             <div class="flex-1">
                 <div class="card flex-1 bg-base-200 text-neutral-content border-base-300 rounded-box border">
                     <div class="card-body p-[15px]">                    
                         <div class="tabs tabs-lift min-h-max">
-
                             <input type="radio" name="pkmn_data_tabs" class="tab" aria-label="Moves" checked="checked" />
                             <div class="tab-content bg-base-100 border-base-300 p-2">
                                 <MoveListLegend />
                                 <div class="flex flex-wrap gap-2 justify-start">
                                     <div class="w-full md:flex-1">
-                                        <MoveListTable title="Move list" pkmn={pkmn} enableLvCol={true} moves={ moves.lv } />
+                                        <MoveListTable title="Move list" pkmn={pkmn}  enableNatCol={true} enableLvCol={true} moves={ moves.lv } />
                                     </div>
                                     {isHoopa && <div class="w-full md:flex-1">
                                         <MoveListTable title="Linked move list" pkmn={pkmn} moves={ moves.linked } />
