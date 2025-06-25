@@ -2,9 +2,10 @@
 import { listAbilities } from '../../functions/ability.ts';
 ---
 
-<div class="card bg-base-300 mt-2">
-    <div id="typeFilters" class="card-body flex-wrap p-2">
-        <input 
+<div class="card bg-base-300">
+    <div class="card-body p-4">
+        <h2 class="card-title">Ability</h2>
+        <!-- <input 
             id="abilityInput" 
             type="text" 
             class="w-full input transition-all duration-300 ease-in-out
@@ -16,6 +17,14 @@ import { listAbilities } from '../../functions/ability.ts';
             { listAbilities().map( (ability: any) => (
                 <option value={ability.Name}>{ability.Name}</option>
             ) ) }
-        </datalist>
+        </datalist> -->
+
+        <select id="abilityInput" class="select w-full hover:outline-0 hover:border-pkb-red
+            focus:outline-0 focus:border-pkb-red">
+            <option selected value="do-not-filter">- Any -</option>
+            { listAbilities().map( (ability: any) => (
+                <option value={ability.Name}>{ability.Name}</option>
+            ) ) }
+        </select>
     </div>
 </div>

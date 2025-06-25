@@ -1,0 +1,23 @@
+---
+import TypeBadge  from '../../ui/TypeBadge.astro';
+
+import { listTypeWithoutStellar } from '../../functions/type.ts';
+
+const types = listTypeWithoutStellar()
+
+---
+<div class="card bg-base-300">
+    <div class="card-body p-4">        
+        <h2 class="card-title">Types</h2>
+        <div class="flex flex-wrap mt-[5px] gap-2">
+            {types.map( (type:any) => {
+                return (
+                    <div class="grayscale opacity-50 type-filter hover:grayscale-0 hover:opacity-100 transition-all duration-200 ease-in-out cursor-pointer" data-type={type.name}>
+                        <TypeBadge typeName={ type.name } textSize="xs" height="26px" logoWidth={16} logoHeight={16} fontWeight="semibold" />
+                    </div>
+                )
+            })}
+        </div>
+
+    </div>
+</div>

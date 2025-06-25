@@ -1,0 +1,20 @@
+---
+import FilterByName from './FilterByName.astro';
+import FilterByBST from './FilterByBST.astro';
+import FilterByAbility from './FilterByAbility.astro';
+import FilterByType from './FilterByType.astro';
+---
+<FilterByName/>                         
+<div class="collapse collapse-arrow bg-base-200 border-base-300 border">
+    <input type="checkbox" />
+    <div class="collapse-title font-semibold">Advanced filters</div>
+    <div class="collapse-content text-sm">
+        <div class="flex flex-wrap gap-2 justify-between">
+            <FilterByBST />
+            <FilterByAbility />
+            <div class="max-w-[700px]">
+                <FilterByType />
+            </div>
+        </div>
+    </div>
+</div>

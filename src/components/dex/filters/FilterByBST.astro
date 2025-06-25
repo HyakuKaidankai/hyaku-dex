@@ -1,0 +1,24 @@
+---
+import { getBSTLimits } from '../../functions/pokemon.ts';
+
+const bst = getBSTLimits();
+---
+<div class="card bg-base-300">
+    <div class="card-body p-4">
+        <h2 class="card-title">Base stat total</h2>
+        <label class="input transition-all duration-300 ease-in-out outline-none shadow-none
+       hover:border-pkb-red         hover:outline-none
+       focus:border-pkb-red         focus:outline-none 
+       focus-within:border-pkb-red focus-within:outline-none">
+            <span class="label">Min</span>
+            <input id="minBstQuery" type="number" placeholder={bst.min.toString()} value={bst.min} />
+        </label>
+        <label class="input transition-all duration-300 ease-in-out outline-none shadow-none
+       hover:border-pkb-red         hover:outline-none
+       focus:border-pkb-red         focus:outline-none 
+       focus-within:border-pkb-red focus-within:outline-none">
+            <span class="label">Max</span>
+            <input id="maxBstQuery" type="number" placeholder={bst.max.toString()} value={bst.max} />
+        </label>
+    </div>
+</div>
