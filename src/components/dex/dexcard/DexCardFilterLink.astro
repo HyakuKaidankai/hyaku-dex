@@ -1,4 +1,6 @@
 ---
+import { calculateBST } from '../../functions/pokemon.ts';
+
 const { pkmn } = Astro.props;
 
 const pkmnName = pkmn.display_name ? pkmn.display_name : pkmn["Species Name"]
@@ -7,6 +9,7 @@ const pkmnName = pkmn.display_name ? pkmn.display_name : pkmn["Species Name"]
 <a class="pkmn-container" href={`/hyaku-dex/pkmn/${pkmn["Species Name"]}`}
 data-name={pkmn["Species Name"]} 
 data-alt-name={pkmnName}
+data-bst={calculateBST(pkmn)}
 data-t1={pkmn["Type1"]} 
 data-t2={pkmn["Type2"]}
 data-ab1={pkmn.abilities[0]["name"]}

@@ -79,7 +79,7 @@ for(let m of pokeapi_lv_moves) {
     // name needs to be sanitized to match the move names in the HyakuDex, as the PokeAPI uses different naming conventions
     let move_name = sanitizeMoveName(m.name);
     if( !moves.lv.some((move:any) => move.name.toLowerCase() === move_name.toLowerCase()) ) {
-        console.log(`Adding move: ${move_name} at level ${m.level}`);
+        // console.log(`Adding move: ${move_name} at level ${m.level}`);
         // If the move is not already in the lv list, add it
         moves.lv.push({
             name: move_name,
@@ -104,7 +104,7 @@ if(isMew) {
       // name needs to be sanitized to match the move names in the HyakuDex, as the PokeAPI uses different naming conventions
       let move_name = sanitizeMoveName(m);
       if( !otherMoveList.some((move:any) => move.name.toLowerCase() === move_name.toLowerCase()) ) {
-          console.log(`Adding move: ${move_name} to other moves`);
+          // console.log(`Adding move: ${move_name} to other moves`);
           // If the move is not already in the other list, add it
           otherMoveList.push({
               name: move_name,

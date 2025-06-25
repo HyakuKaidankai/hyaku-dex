@@ -6,6 +6,8 @@
     const pokemonList = document.getElementById("pokemonList") as HTMLElement;
     const nameSearchInput = document.getElementById('nameSearchInput') as HTMLInputElement;
     const abilityInput = document.getElementById('abilityInput') as HTMLInputElement;
+    const minBSTInput = document.getElementById('minBstQuery') as HTMLInputElement;
+    const maxBSTInput = document.getElementById('maxBstQuery') as HTMLInputElement;
 
     // Filter by name and type function
     function filterPokemon() {
@@ -18,6 +20,7 @@
         for (const item of pokemonItems) {
             const name = item.getAttribute('data-name')?.toLowerCase();
             const altname = item.getAttribute('data-alt-name')?.toLowerCase();
+            const bst = item.getAttribute('data-bst')
             const type1 = item.getAttribute('data-t1')?.toLowerCase();
             const type2 = item.getAttribute('data-t2')?.toLowerCase();
             const ability1 = item.getAttribute('data-ab1')?.toLowerCase();
@@ -30,6 +33,7 @@
             let matchesName = true;
             let matchesType = true;
             let matchesAbility = true;
+            let matchesBST = true;
 
             if (query) {
                 matchesName = (name !== undefined && name.includes(query)) || (altname !== undefined && altname.includes(query));
@@ -55,7 +59,8 @@
                              (ability6?.toLowerCase() === abilityQuery.toLowerCase());
             }   
 
-            if (matchesName && matchesType && matchesAbility) {
+            matchesBST = (Number(bst) >= Number(minBSTInput.value)) && (Number(bst) <= Number(maxBSTInput.value)) 
+            if (matchesName && matchesType && matchesAbility && matchesBST) {
                 (item as HTMLElement).style.display = 'inherit';
             } else {
                 (item as HTMLElement).style.display = 'none';
@@ -76,6 +81,8 @@
 
     nameSearchInput && nameSearchInput.addEventListener('input', debounce(filterPokemon, 300));
     abilityInput.addEventListener('input', debounce(filterPokemon, 300));
+    minBSTInput.addEventListener('input', debounce(filterPokemon, 300));
+    maxBSTInput.addEventListener('input', debounce(filterPokemon, 300));
 
     let enabledCount = 0;
     document.querySelectorAll('.type-filter').forEach(div => {

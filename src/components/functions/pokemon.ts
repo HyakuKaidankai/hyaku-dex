@@ -107,3 +107,21 @@ export function moveIsStab(pkmn: any, type: any) {
     let matchSecond = type["Type__1"].toLowerCase() === pkmn["Type2"].toLowerCase();
     return ( (matchFirst || matchSecond) );
 }
+
+export function calculateBST(pokemon: any) {
+    return pokemon["HP"] +
+           pokemon["Attack"] +
+           pokemon["Defense"] +
+           pokemon["Sp. Atk"] +
+           pokemon["Sp. Def"] +
+           pokemon["Speed"];
+  }
+
+export function getBSTLimits() {
+    const bstValues = BasicData.map(calculateBST);
+
+    return {
+        min: Math.min(...bstValues),
+        max: Math.max(...bstValues)
+    }
+}

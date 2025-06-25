@@ -3,6 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import { Image } from 'astro:assets';
 
 import HyakuDexLogo from '../assets/logo.png';
+import FilterByBST from '../components/dex/sidebar/FilterByBST.astro';
 import FilterByType from '../components/dex/sidebar/FilterByType.astro';
 import FilterByAbility from '../components/dex/sidebar/FilterByAbility.astro';
 
@@ -53,6 +54,10 @@ import { listPkmn } from '../components/functions/pokemon.ts';
                 <li class="menu-title">Filters</li>
                 <!-- Sidebar content here -->
                 <li>
+                    <details>
+                        <summary>Base stat total</summary>
+                        <FilterByBST />
+                    </details>
                     <details>
                         <summary>Types</summary>
                         <FilterByType />
